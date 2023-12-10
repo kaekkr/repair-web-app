@@ -6,6 +6,14 @@ h1 {
 	@apply text-2xl
 }
 
+h3 {
+	@apply text-sm
+}
+
+p {
+	@apply text-xs
+}
+
 .button {
 	@apply bg-[#FFB627] text-white rounded-md;
 }

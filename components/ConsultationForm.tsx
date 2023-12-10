@@ -1,61 +1,40 @@
 'use client';
 
-import Image from 'next/image';
-import {
-	Select,
-	Input,
-	InputGroup,
-	InputLeftElement,
-	FormControl,
-} from '@chakra-ui/react';
-
-interface ConsultationFormProps {}
-
-const ConsultationForm =
-	({}: ConsultationFormProps) => {
-		const requestConsultation = () => {
-			console.log('hello');
-		};
-
-		return (
-			<FormControl
-				onSubmit={requestConsultation}
-				className='grid grid-cols-2 gap-5'
-			>
-				<Select placeholder='Выберите технику'>
-					<option value=''>1</option>
-					<option value=''>2</option>
-				</Select>
-				<InputGroup>
-					<InputLeftElement pointerEvents='none'>
-						<Image
-							src='/icons/phone-icon.svg'
-							alt='phone icon'
-							width={15}
-							height={15}
-						/>
-					</InputLeftElement>
-					<Input
-						type='tel'
-						placeholder='Сотовый номер'
-					/>
-				</InputGroup>
-				<InputGroup className='col-span-2'>
-					<InputLeftElement pointerEvents='none'>
-						<Image
-							src='/icons/people-icon.svg'
-							alt='people icon'
-							width={15}
-							height={15}
-						/>
-					</InputLeftElement>
-					<Input placeholder='Полное имя' />
-				</InputGroup>
-				<button className='button col-span-2'>
-					Отправить
-				</button>
-			</FormControl>
-		);
+const ConsultationForm = () => {
+	const requestConsultation = () => {
+		console.log('hello');
 	};
+
+	return (
+		<form
+			onClick={requestConsultation}
+			className='grid grid-cols-2 grid-rows-3 gap-5'
+		>
+			<select
+				name=''
+				id=''
+				className='py-3 px-4 rounded-lg bg-white border-yellow-500 border-2 cursor-pointer'
+			>
+				<option value='' disabled selected>
+					Выберите технику
+				</option>
+				<option value=''>1</option>
+			</select>
+			<input
+				type='text'
+				placeholder='Сотовый номер'
+				className='bg-[#F7F7F7] border-0 rounded-lg py-1 px-2 indent-10 bg-[15px] bg-no-repeat bg-[url("/icons/phone-icon.svg")] bg-[length:20px_20px]'
+			/>
+			<input
+				type='text'
+				placeholder='Полное имя'
+				className='bg-[#F7F7F7] border-0 rounded-lg col-span-2 py-1 px-2 indent-10 bg-[15px] bg-no-repeat bg-[url("/icons/people-icon.svg")] bg-[length:20px_20px]'
+			/>
+			<button className='button col-span-2'>
+				Отправить
+			</button>
+		</form>
+	);
+};
 
 export default ConsultationForm;

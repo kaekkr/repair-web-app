@@ -11,7 +11,7 @@ export default function Home() {
 	return (
 		<main className='space-y-20'>
 			<Hero />
-			<Advantages title='Почему вы должны выбрать нас ?' />
+			<Advantages />
 			<Brands />
 			<Carousel
 				title='Что думает наши клиенты?'
@@ -21,8 +21,9 @@ export default function Home() {
 			<div>
 				<h1>Как мы работаем</h1>
 				<div className='flex space-x-5'>
-					{works.map(work => (
+					{works.map((work, idx) => (
 						<WorkCard
+							key={idx}
 							title={work.title}
 							body={work.body}
 						/>

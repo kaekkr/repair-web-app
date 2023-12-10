@@ -18,15 +18,22 @@ const Carousel = ({
 }: CarouselProps) => {
 	const [emblaRef] = useEmblaCarousel();
 
+	const isFeedback = (
+		item: Feedback | Master
+	): item is Feedback => {
+		return type === 'feedback';
+	};
+
 	return (
 		<div className='bg-yellow-500'>
 			<h1>{title}</h1>
 			<div ref={emblaRef}>
 				<div className='flex space-x-5'>
 					{content.map(con => {
-						if (type === 'feedback') {
+						if (isFeedback(con)) {
 							return (
 								<FeedbackCard
+									key={con.id}
 									title={con.title}
 									body={con.body}
 									name={con.name}
@@ -34,7 +41,16 @@ const Carousel = ({
 								/>
 							);
 						} else {
-							return <MasterCard />;
+							return (
+								<MasterCard
+									key={con.id}
+									name={con.name}
+									body={con.body}
+									location={con.location}
+									experience={con.experience}
+									imgSrc={con.imgSrc}
+								/>
+							);
 						}
 					})}
 				</div>

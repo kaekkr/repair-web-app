@@ -32,7 +32,7 @@ const Brands = () => {
 	const [emblaRef] = useEmblaCarousel();
 
 	return (
-		<div>
+		<div className='flex flex-col items-center'>
 			<h1 className='font-bold'>
 				Ремонт всех марок и моделей
 			</h1>

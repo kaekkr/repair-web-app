@@ -1,13 +1,16 @@
 export interface Feedback {
-  title: string
-  body: string
-  name: string
-  date: string
+	id: number;
+	title: string;
+	body: string;
+	name: string;
+	date: string;
 }
 
 export interface Master {
-  name: string
-  body: string
-  location: string
-  experience: string
+  id: number;
+	name: string;
+	body: string;
+	location: string;
+	experience: string;
+	imgSrc: string;
 }
