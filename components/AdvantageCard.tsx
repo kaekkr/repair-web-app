@@ -1,21 +1,21 @@
 import Image from 'next/image';
 
-interface CardProps {
+interface AdvantageCardProps {
 	title: string;
 	body: string;
 	imgSrc: string;
 	type: number;
 }
 
-const Card = ({
+const AdvantageCard = ({
 	title,
 	body,
 	imgSrc,
 	type,
-}: CardProps) => {
+}: AdvantageCardProps) => {
 	return (
 		<div
-			className={`bg-white rounded-lg max-w-[15rem] py-8 px-5 space-y-5 ${
+			className={`bg-white rounded-2xl max-w-[15rem] py-10 px-6 space-y-5 ${
 				type === 2
 					? 'bg-yellow-500 text-white'
 					: ''
@@ -32,15 +32,15 @@ const Card = ({
 					{title}
 				</h2>
 			</div>
-			<p
+			<h3
 				className={`max-w-[15rem] ${
 					type === 1 ? 'text-[#6E6E6E]' : ''
 				}`}
 			>
 				{body}
-			</p>
+			</h3>
 		</div>
 	);
 };
 
-export default Card;
+export default AdvantageCard;

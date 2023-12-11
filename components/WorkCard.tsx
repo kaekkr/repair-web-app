@@ -8,8 +8,8 @@ const WorkCard = ({
 	body,
 }: WorkCardProps) => {
 	return (
-		<div>
-			<h1>{title}</h1>
+		<div className='bg-white rounded-xl p-10'>
+			<h1>1.{title}</h1>
 			<p>{body}</p>
 		</div>
 	);

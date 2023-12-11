@@ -21,3 +21,4 @@ p {
 .active-page {
 	@apply text-yellow-500 underline;
 }
+

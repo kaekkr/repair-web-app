@@ -1,5 +1,6 @@
-import Card from './Card';
-import { advantages } from '@/data/advantages';
+import { Advantage } from '@/types';
+import AdvantageCard from './AdvantageCard';
+import { advantages } from '@/data';
 
 const Advantages = () => {
 	return (
@@ -7,16 +8,18 @@ const Advantages = () => {
 			<h1 className='font-bold'>
 				Почему вы должны выбрать нас ?
 			</h1>
-			<div className='flex space-x-8'>
-				{advantages.map(advantage => (
-					<Card
-						key={advantage.id}
-						title={advantage.title}
-						body={advantage.body}
-						imgSrc={advantage.imgSrc}
-						type={advantage.type}
-					/>
-				))}
+			<div className='flex space-x-32'>
+				{advantages.map(
+					(advantage: Advantage) => (
+						<AdvantageCard
+							key={advantage.id}
+							title={advantage.title}
+							body={advantage.body}
+							imgSrc={advantage.imgSrc}
+							type={advantage.type}
+						/>
+					)
+				)}
 			</div>
 		</div>
 	);

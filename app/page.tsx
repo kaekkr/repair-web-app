@@ -1,35 +1,25 @@
 import Advantages from '@/components/Advantages';
-import Brands from '@/components/Brands';
 import Carousel from '@/components/Carousel';
 import Hero from '@/components/Hero';
-import WorkCard from '@/components/WorkCard';
-import { feedbacks } from '@/data/feedbacks';
-import { works } from '@/data/works';
-import { masters } from '@/data/masters';
+import Works from '@/components/Works';
+import { brands, feedbacks, masters } from '@/data';
 
 export default function Home() {
 	return (
 		<main className='space-y-20'>
 			<Hero />
 			<Advantages />
-			<Brands />
 			<Carousel
-				title='Что думает наши клиенты?'
+				title='Ремонт всех марок и моделей'
+				type='brand'
+				content={brands}
+			/>
+			<Carousel
+				title='Что думают наши клиенты?'
 				type='feedback'
 				content={feedbacks}
 			/>
-			<div>
-				<h1>Как мы работаем</h1>
-				<div className='flex space-x-5'>
-					{works.map((work, idx) => (
-						<WorkCard
-							key={idx}
-							title={work.title}
-							body={work.body}
-						/>
-					))}
-				</div>
-			</div>
+			<Works />
 			<Carousel
 				title='Наши мастера'
 				type='master'

@@ -10,7 +10,7 @@ const Hero = () => {
 				layout='fill'
 				objectFit='cover'
 				objectPosition='center'
-				className='rounded-3xl'
+				className='rounded-[2rem]'
 			/>
 			<div className='absolute flex flex-col items-center bg-white p-8 rounded-3xl top-1/4'>
 				<Consultation />
