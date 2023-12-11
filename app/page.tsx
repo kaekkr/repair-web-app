@@ -2,7 +2,11 @@ import Advantages from '@/components/Advantages';
 import Carousel from '@/components/Carousel';
 import Hero from '@/components/Hero';
 import Works from '@/components/Works';
-import { brands, feedbacks, masters } from '@/data';
+import {
+	brands,
+	feedbacks,
+	masters,
+} from '@/data';
 
 export default function Home() {
 	return (

@@ -15,7 +15,7 @@ p {
 }
 
 .button {
-	@apply bg-[#FFB627] text-white rounded-md;
+	@apply bg-[#FFB627] text-white rounded-lg;
 }
 
 .active-page {

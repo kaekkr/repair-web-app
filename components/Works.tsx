@@ -3,12 +3,13 @@ import WorkCard from './WorkCard';
 
 const Works = () => {
 	return (
-		<div className='flex flex-col items-center space-y-10'>
+		<div className='md:items-center flex flex-col space-y-10'>
 			<h1 className='font-bold'>Как мы работаем</h1>
-			<div className='flex space-x-5'>
-				{works.map((work, idx) => (
+			<div className='md:flex md:space-x-20 grid grid-rows-2 grid-cols-2 gap-4'>
+				{works.map((work) => (
 					<WorkCard
-						key={idx}
+						key={work.id}
+						id={work.id}
 						title={work.title}
 						body={work.body}
 					/>

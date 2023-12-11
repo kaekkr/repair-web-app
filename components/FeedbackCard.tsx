@@ -14,10 +14,10 @@ const FeedbackCard = ({
 	date,
 }: FeedbackCardProps) => {
 	return (
-		<div className='flex flex-col justify-between space-y-7 bg-white rounded-xl py-6 px-4'>
+		<div className='md:space-y-7 md:px-5 py-6 px-3 flex flex-col justify-between bg-white rounded-xl'>
 			<div className='space-y-4'>
 				<div className='flex justify-between'>
-					<div className='flex space-x-3 items-center'>
+					<div className='space-x-3 md:space-x-1 flex items-center'>
 						<Image
 							src='up-emoji.svg'
 							alt='emoji'
@@ -28,7 +28,7 @@ const FeedbackCard = ({
 					</div>
 					<h3 className='text-[#6E6E6E]'>{date}</h3>
 				</div>
-				<p className='max-w-xs'>{body}</p>
+				<p className='max-w-[16rem] leading-5'>{body}</p>
 			</div>
 			<div className='flex space-x-3'>
 				<Image

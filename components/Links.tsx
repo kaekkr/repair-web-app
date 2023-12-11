@@ -7,7 +7,7 @@ const Links = () => {
 	const pathname = usePathname();
 
 	return (
-		<ul className='flex space-x-10'>
+		<ul className='hidden md:flex space-x-10'>
 			<li>
 				<Link
 					href='/'

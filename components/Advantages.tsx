@@ -4,11 +4,11 @@ import { advantages } from '@/data';
 
 const Advantages = () => {
 	return (
-		<div className='flex flex-col items-center space-y-10'>
-			<h1 className='font-bold'>
+		<div className='md:items-center flex flex-col space-y-10'>
+			<h1 className='md:max-w-md max-w-[15rem] font-bold'>
 				Почему вы должны выбрать нас ?
 			</h1>
-			<div className='flex space-x-32'>
+			<div className='md:flex md:space-x-32 grid grid-rows-2 grid-cols-2 gap-4'>
 				{advantages.map(
 					(advantage: Advantage) => (
 						<AdvantageCard

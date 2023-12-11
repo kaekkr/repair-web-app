@@ -2,7 +2,7 @@ import ConsultationForm from './ConsultationForm';
 
 const Consultation = () => {
 	return (
-		<div className='bg-white max-w-md py-2 px-5 space-y-6'>
+		<div className='md:px-5 md:space-y-6 md:py-2 max-w-md bg-white space-y-4'>
 			<h1 className='font-bold'>
 				Экспертный ремонт бытовой техники в Алмате
 				на дому

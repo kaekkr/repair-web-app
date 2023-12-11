@@ -18,8 +18,9 @@ const Carousel = ({
 	type,
 	content,
 }: CarouselProps) => {
-	const [emblaRef] = useEmblaCarousel({
+	const [emblaRef, emblaApi] = useEmblaCarousel({
 		loop: true,
+		dragFree: true,
 	});
 
 	const renderCard = (
@@ -62,22 +63,57 @@ const Carousel = ({
 		}
 	};
 
+	const handleScroll = () => {
+		if (emblaApi) {
+			// Check the progress of the carousel scroll
+			const scrollProgress =
+				emblaApi.scrollProgress();
+
+			// Calculate the number of visible cards based on the scroll progress
+			const visibleCards = Math.ceil(
+				content.length * scrollProgress
+			);
+
+			// Scroll to the desired slide
+			emblaApi.scrollTo(visibleCards - 1, true);
+		}
+	};
+
+	const handleDragEnd = () => {
+		// Ensure emblaApi is defined
+		if (emblaApi) {
+			// Check if the next or previous scroll is needed
+			const scrollProgress =
+				emblaApi.scrollProgress();
+			if (scrollProgress === 0) {
+				emblaApi.scrollPrev(true); // Scroll to the last item
+			} else if (scrollProgress === 1) {
+				emblaApi.scrollNext(true); // Scroll to the first item
+			}
+		}
+	};
+
 	return (
 		<div
 			className={`${
 				type !== 'brand'
 					? 'bg-yellow-500 py-12 rounded-2xl'
 					: ''
-			} flex flex-col items-center space-y-10`}
+			} md:items-center px-4 flex flex-col space-y-10`}
 		>
 			<h1
 				className={`${
 					type !== 'brand' ? 'text-white' : ''
-				} font-bold`}
+				} md:max-w-md max-w-xs font-bold`}
 			>
 				{title}
 			</h1>
-			<div ref={emblaRef}>
+			<div
+				ref={emblaRef}
+				onScroll={handleScroll}
+				onTouchEnd={handleDragEnd}
+				onMouseUp={handleDragEnd}
+			>
 				<div className='flex space-x-20'>
 					{content.map(con =>
 						renderCard(con, con.id)

@@ -15,13 +15,13 @@ const AdvantageCard = ({
 }: AdvantageCardProps) => {
 	return (
 		<div
-			className={`bg-white rounded-2xl max-w-[15rem] py-10 px-6 space-y-5 ${
+			className={`md:px-6 px-3 py-10 bg-white rounded-2xl max-w-[15rem] space-y-5 ${
 				type === 2
 					? 'bg-yellow-500 text-white'
 					: ''
 			}`}
 		>
-			<div className='flex space-x-5'>
+			<div className='md:space-x-5 space-x-3 flex'>
 				<Image
 					src={imgSrc}
 					alt={imgSrc}
@@ -33,7 +33,7 @@ const AdvantageCard = ({
 				</h2>
 			</div>
 			<h3
-				className={`max-w-[15rem] ${
+				className={`md:text-base text-xs max-w-[15rem] ${
 					type === 1 ? 'text-[#6E6E6E]' : ''
 				}`}
 			>

@@ -94,6 +94,38 @@ export const masters: Master[] = [
 		experience: '3 года',
 		imgSrc: '',
 	},
+	{
+		id: 2,
+		name: 'Андрей',
+		body: 'Цена договорная Стиральная машина, холодильник',
+		location: '2.7 км от вас',
+		experience: '3 года',
+		imgSrc: '',
+	},
+	{
+		id: 3,
+		name: 'Андрей',
+		body: 'Цена договорная Стиральная машина, холодильник',
+		location: '2.7 км от вас',
+		experience: '3 года',
+		imgSrc: '',
+	},
+	{
+		id: 4,
+		name: 'Андрей',
+		body: 'Цена договорная Стиральная машина, холодильник',
+		location: '2.7 км от вас',
+		experience: '3 года',
+		imgSrc: '',
+	},
+	{
+		id: 5,
+		name: 'Андрей',
+		body: 'Цена договорная Стиральная машина, холодильник',
+		location: '2.7 км от вас',
+		experience: '3 года',
+		imgSrc: '',
+	},
 ];
 
 export const works: Work[] = [

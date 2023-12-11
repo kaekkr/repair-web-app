@@ -12,7 +12,7 @@ const Hero = () => {
 				objectPosition='center'
 				className='rounded-[2rem]'
 			/>
-			<div className='absolute flex flex-col items-center bg-white p-8 rounded-3xl top-1/4'>
+			<div className='md:top-1/4 md:bottom-auto bottom-0 absolute flex flex-col items-center bg-white p-8 rounded-3xl'>
 				<Consultation />
 			</div>
 		</div>
