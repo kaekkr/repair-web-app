@@ -1,8 +1,11 @@
+import HeroAbout from '@/components/about/HeroAbout'
 import React from 'react'
 
 const AboutPage = () => {
   return (
-    <div>AboutPage</div>
+    <main className='space-y-20'>
+      <HeroAbout />
+    </main>
   )
 }
 
