@@ -3,7 +3,7 @@ import Links from './Links';
 
 const Navbar = () => {
 	return (
-		<nav className='md:bg-[#F3F3F3] md:p-0 flex justify-between items-center bg-white rounded-2xl py-5 px-6'>
+		<nav className='md:bg-[#F3F3F3] md:p-0 flex justify-between items-center bg-white rounded-2xl py-5 px-6 mb-10'>
 			<Image
 				src='logo.svg'
 				alt='logo'
