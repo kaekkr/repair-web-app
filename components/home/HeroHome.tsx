@@ -5,8 +5,8 @@ const HeroHome = () => {
 	return (
 		<div className='mt-10 h-screen flex flex-col items-center relative'>
 			<Image
-				src='/bg/hero-bg.svg'
-				alt='hero bg'
+				src='/bg/hero-home-bg.svg'
+				alt='hero home bg'
 				layout='fill'
 				objectFit='cover'
 				objectPosition='center'

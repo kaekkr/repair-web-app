@@ -32,11 +32,10 @@ const FeedbackCard = ({
 			</div>
 			<div className='flex space-x-3'>
 				<Image
-					src='icons/people-icon-2.svg'
+					src='icons/people-icon-2-black.svg'
 					alt='people icon 2'
 					width={15}
 					height={15}
-					className='bg-[#2B303A]'
 				/>
 				<h3 className='text-[#6E6E6E] uppercase'>{name}</h3>
 			</div>

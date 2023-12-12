@@ -18,7 +18,7 @@ export const advantages: Advantage[] = [
 		id: 2,
 		title: 'Профи мастеры',
 		body: 'Наши мастера обладают высокой квалификацией и опытом в области ремонта бытовой техники.',
-		imgSrc: 'icons/people-icon-2.svg',
+		imgSrc: 'icons/people-icon-2-white.svg',
 		type: 2,
 	},
 	{
@@ -236,5 +236,67 @@ export const works: Work[] = [
 		id: 4,
 		title: 'Результат и Гарантия',
 		body: 'Качественный ремонт обеспечен, гарантия от 6 месяцев до 1 года.',
+	},
+];
+
+export const moreAboutCompany = [
+	{
+		id: 1,
+		title: 'Миссия и Ценности',
+		body: 'Наша миссия - предоставлять высококачественные и надежные услуги по ремонту, создавая комфорт в каждом доме. Мы ценим профессионализм, прозрачность и индивидуальный подход к каждому клиенту.',
+		imgSrc: 'icons/mission-icon.svg',
+		type: 1,
+	},
+	{
+		id: 2,
+		title: 'Цели Компании',
+		body: 'Мы стремимся быть лучшими в своей области, обеспечивая нашим клиентам быстрый и эффективный ремонт, а также выдающийся уровень обслуживания.',
+		imgSrc: 'icons/goal-icon.svg',
+		type: 2,
+	},
+	{
+		id: 3,
+		title: 'Наши Мастера',
+		body: 'Наша команда состоит из квалифицированных мастеров, прошедших строгий отбор и обучение. Их опыт и профессионализм гарантируют, что ваша техника находится в надежных руках.',
+		imgSrc: 'icons/people-icon-2-black.svg',
+		type: 1,
+	},
+	{
+		id: 4,
+		title: 'Миссия и Ценности',
+		body: 'Предоставляем гарантию на выполненные работы и установленные запчасти, обеспечивая долгосрочную надежность ремонта на год.',
+		imgSrc: 'icons/guard-icon.svg',
+		type: 1,
+	},
+];
+
+export const certificates = [
+	{
+		id: 1,
+		imgSrc: 'certificates/certificate-1.svg',
+	},
+	{
+		id: 2,
+		imgSrc: 'certificates/certificate-2.svg',
+	},
+	{
+		id: 3,
+		imgSrc: 'certificates/certificate-1.svg',
+	},
+	{
+		id: 4,
+		imgSrc: 'certificates/certificate-2.svg',
+	},
+	{
+		id: 5,
+		imgSrc: 'certificates/certificate-1.svg',
+	},
+	{
+		id: 6,
+		imgSrc: 'certificates/certificate-2.svg',
+	},
+	{
+		id: 7,
+		imgSrc: 'certificates/certificate-1.svg',
 	},
 ];
