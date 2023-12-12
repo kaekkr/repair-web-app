@@ -1,9 +1,11 @@
 import HeroAbout from '@/components/about/HeroAbout';
+import InterestingFactsCard from '@/components/about/InterestingFactsCard';
+import Carousel from '@/components/common/Carousel';
 import FourCard from '@/components/common/FourCard';
 import FourCards from '@/components/common/FourCards';
-import Carousel from '@/components/home/Carousel';
 import {
 	certificates,
+	interestingFacts,
 	moreAboutCompany,
 } from '@/data';
 import Image from 'next/image';
@@ -30,22 +32,33 @@ const AboutPage = () => {
 				body='Наша компания обладает всеми необходимыми сертификациями и лицензиями, гарантируя, что вы сотрудничаете с надежным и профессиональным сервисным центром.'
 				type=''
 			>
-				{certificates.map(certificate => {
-					return (
-						<div
-							className='relative h-64 flex-[0_0_20%]'
-							key={certificate.id}
-						>
-							<Image
-								src={certificate.imgSrc}
-								alt={certificate.imgSrc}
-								width={400}
-								height={400}
-							/>
-						</div>
-					);
-				})}
+				{certificates.map(certificate => (
+					<div
+						className='relative h-64 flex-[0_0_20%]'
+						key={certificate.id}
+					>
+						<Image
+							src={certificate.imgSrc}
+							alt={certificate.imgSrc}
+							width={400}
+							height={400}
+						/>
+					</div>
+				))}
 			</Carousel>
+			<FourCards
+				title='Интересные факты'
+				body='Работаем с 2022 года'
+			>
+				{interestingFacts.map(interestingFact => (
+					<InterestingFactsCard
+						key={interestingFact.id}
+						title={interestingFact.title}
+						body={interestingFact.body}
+						imgSrc={interestingFact.imgSrc}
+					/>
+				))}
+			</FourCards>
 		</main>
 	);
 };

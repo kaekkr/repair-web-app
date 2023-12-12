@@ -19,8 +19,8 @@ const FeedbackCard = ({
 				<div className='flex justify-between items-center'>
 					<div className='md:space-x-3 space-x-2 flex items-center'>
 						<Image
-							src='up-emoji.svg'
-							alt='emoji'
+							src='icons/thumb-up-emoji-icon.svg'
+							alt='thumb up emoji'
 							width={20}
 							height={20}
 						/>

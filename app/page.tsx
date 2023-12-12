@@ -1,15 +1,17 @@
+import Carousel from '@/components/common/Carousel';
 import FourCard from '@/components/common/FourCard';
 import FourCards from '@/components/common/FourCards';
-import Carousel from '@/components/home/Carousel';
+import FourCardsAlternate from '@/components/common/FourCardsAlternate';
 import FeedbackCard from '@/components/home/FeedbackCard';
 import HeroHome from '@/components/home/HeroHome';
 import MasterCard from '@/components/home/MasterCard';
-import Works from '@/components/home/Works';
+import WorkOrServiceCard from '@/components/home/WorkOrServiceCard';
 import {
 	advantages,
 	brands,
 	feedbacks,
 	masters,
+	works,
 } from '@/data';
 import Image from 'next/image';
 
@@ -62,7 +64,16 @@ export default function Home() {
 					/>
 				))}
 			</Carousel>
-			<Works />
+			<FourCardsAlternate title='Как мы работаем'>
+				{works.map(work => (
+					<WorkOrServiceCard
+						key={work.id}
+						id={work.id}
+						title={work.title}
+						body={work.body}
+					/>
+				))}
+			</FourCardsAlternate>
 			<Carousel title='Наши мастера' type=''>
 				{masters.map(master => (
 					<MasterCard

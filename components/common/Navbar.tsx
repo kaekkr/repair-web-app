@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Links from '../home/Links';
+import Links from './Links';
 
 const Navbar = () => {
 	return (
