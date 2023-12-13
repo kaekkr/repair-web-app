@@ -33,7 +33,7 @@ const FourCard = ({
 				</h2>
 			</div>
 			<h3
-				className={`md:text-sm text-xs max-w-[15rem] ${
+				className={`md:text-sm md:max-w-[15rem] text-xs max-w-[9rem] ${
 					type === 1 ? 'text-[#6E6E6E]' : ''
 				}`}
 			>

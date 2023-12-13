@@ -17,11 +17,11 @@ import Image from 'next/image';
 
 export default function Home() {
 	return (
-		<main className='space-y-20'>
+		<main className='md:space-y-20 space-y-14'>
 			<HeroHome />
 			<FourCards
 				title='Почему вы должны выбрать нас ?'
-				style={{ marginTop: '20rem' }}
+				style={{ marginTop: '28rem' }}
 			>
 				{advantages.map(advantage => (
 					<FourCard
@@ -40,7 +40,7 @@ export default function Home() {
 				{brands.map(brand => {
 					return (
 						<div
-							className='relative h-64 flex-[0_0_20%]'
+							className='relative h-64 flex-[0_0_50%]'
 							key={brand.id}
 						>
 							<Image

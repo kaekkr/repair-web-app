@@ -7,86 +7,84 @@ const LinksAlternate = () => {
 	const pathname = usePathname();
 
 	return (
-		<ul className='hamburger-list'>
-			<li className='hamburger-item'>
+		<ul className='text-center'>
+			<li className=''>
 				<Link
 					href='/'
 					className={
-						pathname === '/'
-							? 'active-page hamburger-link'
-							: 'hamburger-link'
+						pathname === '/' ? 'active-page' : ''
 					}
 				>
 					Главная
 				</Link>
 			</li>
-			<li className='hamburger-item'>
+			<li className=''>
 				<Link
 					href='/about'
 					className={
 						pathname === '/about'
-							? 'active-page hamburger-link'
-							: 'hamburger-link'
+							? 'active-page '
+							: ''
 					}
 				>
 					О нас
 				</Link>
 			</li>
-			<li className='hamburger-item'>
+			<li className=''>
 				<Link
 					href='/services'
 					className={
 						pathname === '/services'
-							? 'active-page hamburger-link'
-							: 'hamburger-link'
+							? 'active-page '
+							: ''
 					}
 				>
 					Услуги
 				</Link>
 			</li>
-			<li className='hamburger-item'>
+			<li className=''>
 				<Link
 					href='/reviews'
 					className={
 						pathname === '/reviews'
-							? 'active-page hamburger-link'
-							: 'hamburger-link'
+							? 'active-page '
+							: ''
 					}
 				>
 					Отзывы
 				</Link>
 			</li>
-			<li className='hamburger-item'>
+			<li className=''>
 				<Link
 					href='/masters'
 					className={
 						pathname === '/masters'
-							? 'active-page hamburger-link'
-							: 'hamburger-link'
+							? 'active-page '
+							: ''
 					}
 				>
 					Мастера
 				</Link>
 			</li>
-			<li className='hamburger-item'>
+			<li className=''>
 				<Link
 					href='/contacts'
 					className={
 						pathname === '/contacts'
-							? 'active-page hamburger-link'
-							: 'hamburger-link'
+							? 'active-page '
+							: ''
 					}
 				>
 					Контакты
 				</Link>
 			</li>
-			<li className='hamburger-item'>
+			<li className=''>
 				<Link
 					href='/blog'
 					className={
 						pathname === '/blog'
-							? 'active-page hamburger-link'
-							: 'hamburger-link'
+							? 'active-page '
+							: ''
 					}
 				>
 					Блог

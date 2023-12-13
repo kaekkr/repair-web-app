@@ -10,12 +10,12 @@ const WorkOrServiceCard = ({
 	body,
 }: WorkOrServiceCardProps) => {
 	return (
-		<div className='md:py-10 md:px-7 md:space-y-10 space-y-5 py-5 px-4 bg-white rounded-xl max-w-[18rem]'>
+		<div className='md:py-10 md:px-7 md:space-y-10 space-y-5 py-7 px-4 bg-white rounded-xl max-w-[18rem]'>
 			<div className='md:max-h-24 flex space-x-3 max-h-12'>
 				<h1 className='md:text-2xl text-base font-bold'>
 					{id}.{' '}
 				</h1>
-				<h1 className='md:text-2xl text-base font-bold max-w-[18rem] h-16'>
+				<h1 className='md:text-2xl text-base font-bold w-4/5 h-16'>
 					{title}
 				</h1>
 			</div>

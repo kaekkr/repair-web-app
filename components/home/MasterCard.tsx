@@ -16,44 +16,42 @@ const MasterCard = ({
 	imgSrc,
 }: MasterCardProps) => {
 	return (
-		<div className='flex-[0_0_50%] bg-white rounded-xl py-7 px-3 max-w-xs space-y-5'>
-			<div className='flex space-x-7 px-8'>
+		<div className='flex-[0_0_75%] bg-white rounded-2xl py-6 space-y-5'>
+			<div className='flex items-center space-x-7 px-3'>
 				<Image
 					src={imgSrc}
 					alt={imgSrc}
-					width={80}
+					width={60}
 					height={20}
 				/>
-				<div className='space-y-4'>
+				<div className='md:space-y-4 space-y-3'>
 					<h2 className='font-bold'>{name}</h2>
-					<div className='space-y-[0.15rem]'>
-						<div className='flex items-center space-x-3'>
-							<Image
-								src='icons/marker-icon.svg'
-								alt='marker icon'
-								width={12}
-								height={12}
-							/>
-							<h3 className='text-[#6E6E6E]'>
-								{location}
-							</h3>
-						</div>
-						<div className='flex items-center space-x-2'>
-							<Image
-								src='icons/work-icon.svg'
-								alt='marker icon'
-								width={15}
-								height={15}
-							/>
-							<h3 className='text-[#6E6E6E]'>
-								Опыт работы: {experience}
-							</h3>
-						</div>
+					<div className='flex items-center space-x-3'>
+						<Image
+							src='icons/marker-icon.svg'
+							alt='marker icon'
+							width={12}
+							height={12}
+						/>
+						<h3 className='text-[#6E6E6E]'>
+							{location}
+						</h3>
+					</div>
+					<div className='flex items-center space-x-2'>
+						<Image
+							src='icons/work-icon.svg'
+							alt='marker icon'
+							width={15}
+							height={15}
+						/>
+						<h3 className='text-[#6E6E6E]'>
+							Опыт работы: {experience}
+						</h3>
 					</div>
 				</div>
 			</div>
 			<hr className='border-black' />
-			<p className='w-[60%] leading-5 px-8'>{body}</p>
+			<p className='md:w-[60%] w-3/4 px-7'>{body}</p>
 		</div>
 	);
 };

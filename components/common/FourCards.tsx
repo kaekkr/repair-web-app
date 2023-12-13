@@ -13,7 +13,7 @@ const FourCards = ({
 }: FourCardsProps) => {
 	return (
 		<div
-			className={`md:items-center flex flex-col space-y-14`}
+			className={`md:items-center md:space-y-14 flex flex-col space-y-10`}
 			style={style}
 		>
 			<div className='md:text-center space-y-3'>
