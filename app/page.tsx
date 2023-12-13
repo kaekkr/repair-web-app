@@ -19,7 +19,10 @@ export default function Home() {
 	return (
 		<main className='space-y-20'>
 			<HeroHome />
-			<FourCards title='Почему вы должны выбрать нас ?'>
+			<FourCards
+				title='Почему вы должны выбрать нас ?'
+				style={{ marginTop: '20rem' }}
+			>
 				{advantages.map(advantage => (
 					<FourCard
 						key={advantage.id}

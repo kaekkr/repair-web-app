@@ -1,10 +1,12 @@
+import Blogs from '@/components/blog/Blogs';
 import HeroBlog from '@/components/blog/HeroBlog';
 
 const BlogPage = () => {
 	return (
-		<div>
+		<main className='space-y-20'>
 			<HeroBlog />
-		</div>
+			<Blogs />
+		</main>
 	);
 };
 

@@ -7,9 +7,6 @@ const HeroAbout = () => {
 			<Image
 				src='/bg/hero-about-bg.svg'
 				alt='hero about bg'
-				layout='fill'
-				objectFit='cover'
-				objectPosition='center'
 				className='rounded-[2rem]'
 			/>
 			<div className='md:top-1/4 md:right-[62%] md:bottom-auto text-white bottom-0 absolute flex flex-col items-center bg-yellow-500 px-6 py-12 rounded-3xl max-w-2xl h-[18rem]'>

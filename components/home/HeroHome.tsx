@@ -7,12 +7,11 @@ const HeroHome = () => {
 			<Image
 				src='/bg/hero-home-bg.svg'
 				alt='hero home bg'
-				layout='fill'
-				objectFit='cover'
-				objectPosition='center'
-				className='rounded-[2rem]'
+				width={1920}
+				height={1080}
+				className='md:rounded-3xl rounded-xl'
 			/>
-			<div className='md:top-1/4 md:bottom-auto bottom-0 absolute flex flex-col items-center bg-white p-8 rounded-3xl'>
+			<div className='md:top-2/3 md:bottom-auto rounded-xl bottom-[37%] absolute flex flex-col items-center bg-white p-8 shadow-lg'>
 				<Consultation />
 			</div>
 		</div>

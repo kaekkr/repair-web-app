@@ -7,8 +7,9 @@ const ConsultationForm = () => {
 				name=''
 				id=''
 				className='md:py-3 md:px-4 md:text-base text-xs px-2 rounded-lg bg-white border-yellow-500 border-2 cursor-pointer'
+				defaultValue='defaultValue'
 			>
-				<option value='' disabled selected>
+				<option value='defaultValue' disabled>
 					Выберите технику
 				</option>
 				<option value=''>1</option>
