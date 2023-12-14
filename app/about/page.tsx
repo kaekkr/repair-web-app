@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 const AboutPage = () => {
 	return (
-		<main className='space-y-20'>
+		<main className='md:space-y-20 space-y-14'>
 			<HeroAbout />
 			<FourCards title='Больше про нашу компанию'>
 				{moreAboutCompany.map(
@@ -34,7 +34,7 @@ const AboutPage = () => {
 			>
 				{certificates.map(certificate => (
 					<div
-						className='relative h-64 flex-[0_0_20%]'
+						className='md:h-64 relative flex-[0_0_60%]'
 						key={certificate.id}
 					>
 						<Image

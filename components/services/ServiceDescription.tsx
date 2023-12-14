@@ -8,7 +8,7 @@ const ServiceDescription = ({
 	children,
 }: ServiceDescriptionProps) => {
 	return (
-		<div className='grid grid-rows-2 grid-cols-4 gap-4'>
+		<div className='md:grid-cols-4 grid grid-rows-2 grid-cols-2 gap-4'>
 			{children}
 		</div>
 	);

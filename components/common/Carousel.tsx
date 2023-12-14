@@ -11,7 +11,7 @@ import {
 
 interface CarouselProps {
 	children: React.ReactNode[];
-	title: string;
+	title?: string;
 	body?: string;
 	type: string;
 }
@@ -23,7 +23,9 @@ const Carousel = ({
 	type,
 }: CarouselProps) => {
 	const options =
-		type === 'brand' ? { dragFree: true } : {};
+		type === 'brand' || type === 'button'
+			? { dragFree: true }
+			: {};
 	const [emblaRef, emblaApi] =
 		useEmblaCarousel(options);
 
@@ -70,9 +72,11 @@ const Carousel = ({
 	return (
 		<div
 			className={`${
-				type !== 'brand'
-					? 'bg-yellow-500 py-12 rounded-2xl px-4 space-y-10'
-					: 'h-52 space-y-5'
+				type !== 'brand' &&
+				type !== 'button' &&
+				'bg-yellow-500 py-12 rounded-2xl px-4 space-y-10'
+			} ${
+				type === 'brand' && 'h-52 space-y-5'
 			} md:items-center md:space-y-20 flex flex-col`}
 		>
 			<div className='space-y-3'>
@@ -84,7 +88,7 @@ const Carousel = ({
 					{title}
 				</h1>
 				{body && (
-					<h2 className='text-white max-w-md text-center'>
+					<h2 className='md:text-center text-white max-w-md'>
 						{body}
 					</h2>
 				)}
@@ -97,7 +101,7 @@ const Carousel = ({
 					{children}
 				</div>
 			</div>
-			{type !== 'brand' && (
+			{type !== 'brand' && type !== 'button' && (
 				<div className='flex justify-center items-center space-x-4'>
 					{scrollSnaps.map((_, index) => (
 						<button

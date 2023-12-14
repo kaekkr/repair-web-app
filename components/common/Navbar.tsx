@@ -59,15 +59,15 @@ const Navbar = () => {
 					></span>
 				</button>
 			</div>
-			<div
-				className={`w-full bg-white z-10 transition-all duration-300 ease-in-out overflow-hidden ${
-					isHamburgerOpen
-						? 'max-h-full'
-						: 'max-h-0'
-				}`}
-			>
-				<LinksAlternate />
-			</div>
+			{isHamburgerOpen && (
+				<div
+					className={`${
+						isHamburgerOpen && 'animate-flip-down'
+					}`}
+				>
+					<LinksAlternate />
+				</div>
+			)}
 		</nav>
 	);
 };

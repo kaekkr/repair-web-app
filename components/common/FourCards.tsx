@@ -21,7 +21,7 @@ const FourCards = ({
 					{title}
 				</h1>
 				{body && (
-					<h3 className='text-[#6E6E6E]'>
+					<h3 className='text-[#6E6E6E] text-base'>
 						{body}
 					</h3>
 				)}

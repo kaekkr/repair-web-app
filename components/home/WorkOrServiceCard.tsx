@@ -15,7 +15,7 @@ const WorkOrServiceCard = ({
 				<h1 className='md:text-2xl text-base font-bold'>
 					{id}.{' '}
 				</h1>
-				<h1 className='md:text-2xl text-base font-bold w-4/5 h-16'>
+				<h1 className='md:text-2xl md:w-4/5 text-sm font-bold h-16'>
 					{title}
 				</h1>
 			</div>

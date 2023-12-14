@@ -19,7 +19,7 @@ const InterestingFactsCard = ({
 				width={40}
 				height={40}
 			/>
-			<h2 className='font-bold text-lg'>{title}</h2>
+			<h2 className='md:text-lg font-bold text-xl'>{title}</h2>
 			<h2 className='max-w-[10rem] text-center text-[#6E6E6E]'>{body}</h2>
 		</div>
 	);

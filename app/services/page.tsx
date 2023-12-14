@@ -28,7 +28,7 @@ const ServicesPage = () => {
 				{brands.map(brand => {
 					return (
 						<div
-							className='relative h-64 flex-[0_0_20%]'
+							className='relative h-64 flex-[0_0_50%]'
 							key={brand.id}
 						>
 							<Image

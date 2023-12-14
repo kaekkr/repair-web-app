@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import CarouselWithStates from '../common/CarouselWithStates';
+import Carousel from '../common/Carousel';
 
 const Blogs = () => {
 	const [blogView, setBlogView] = useState(1);
@@ -15,29 +15,29 @@ const Blogs = () => {
 			<h1 className='font-bold text-center'>
 				Описание услуг
 			</h1>
-			<CarouselWithStates>
+			<Carousel type='button'>
 				<div>
-					<button className='text-[#6E6E6E] italic text-lg'>
+					<button className='md:text-lg text-[#6E6E6E] italic'>
 						Ремонт Стиральных Машин
 					</button>
 				</div>
 				<div>
-					<button className='text-[#6E6E6E] italic text-lg'>
+					<button className='md:text-lg text-[#6E6E6E] italic'>
 						Обслуживание Холодильников
 					</button>
 				</div>
 				<div>
-					<button className='text-[#6E6E6E] italic text-lg'>
+					<button className='md:text-lg text-[#6E6E6E] italic'>
 						Новости и Тенденции в Мире Бытовой
 						Техники
 					</button>
 				</div>
 				<div>
-					<button className='text-[#6E6E6E] italic text-lg'>
+					<button className='md:text-lg text-[#6E6E6E] italic'>
 						Советы по Энергосбережению
 					</button>
 				</div>
-			</CarouselWithStates>
+			</Carousel>
 			{/* {blogView === 1 && (
 				<ServiceDescription>
 					{washingMachinesServices.map(
