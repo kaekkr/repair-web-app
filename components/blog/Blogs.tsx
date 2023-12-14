@@ -1,7 +1,9 @@
 'use client';
 
+import { washingMachinesBlogs } from '@/data';
 import { useState } from 'react';
 import Carousel from '../common/Carousel';
+import BlogCard from './BlogCard';
 
 const Blogs = () => {
 	const [blogView, setBlogView] = useState(1);
@@ -12,96 +14,272 @@ const Blogs = () => {
 
 	return (
 		<div className='space-y-10'>
-			<h1 className='font-bold text-center'>
-				Описание услуг
-			</h1>
 			<Carousel type='button'>
-				<div>
-					<button className='md:text-lg text-[#6E6E6E] italic'>
-						Ремонт Стиральных Машин
-					</button>
-				</div>
-				<div>
-					<button className='md:text-lg text-[#6E6E6E] italic'>
-						Обслуживание Холодильников
-					</button>
-				</div>
-				<div>
-					<button className='md:text-lg text-[#6E6E6E] italic'>
-						Новости и Тенденции в Мире Бытовой
-						Техники
-					</button>
-				</div>
-				<div>
-					<button className='md:text-lg text-[#6E6E6E] italic'>
-						Советы по Энергосбережению
-					</button>
-				</div>
+				<button
+					onClick={() => changeBlogView(1)}
+					className={`${
+						blogView === 1
+							? 'button'
+							: 'text-[#6E6E6E]'
+					} md:text-lg md:italic md:px-5 md:flex-[0_0_30%] flex-[0_0_50%] px-3 text-left `}
+				>
+					Ремонт Стиральных Машин
+				</button>
+				<button
+					onClick={() => changeBlogView(2)}
+					className={`${
+						blogView === 2
+							? 'button'
+							: 'text-[#6E6E6E]'
+					} md:text-lg md:italic md:px-5 md:flex-[0_0_30%] flex-[0_0_50%] px-3 text-left`}
+				>
+					Обслуживание Холодильников
+				</button>
+				<button
+					onClick={() => changeBlogView(3)}
+					className={`${
+						blogView === 3
+							? 'button'
+							: 'text-[#6E6E6E]'
+					} md:text-lg md:italic md:px-5 md:flex-[0_0_30%] flex-[0_0_50%] px-3 text-left`}
+				>
+					Новости и Тенденции в Мире Бытовой
+					Техники
+				</button>
+				<button
+					onClick={() => changeBlogView(4)}
+					className={`${
+						blogView === 4
+							? 'button'
+							: 'text-[#6E6E6E]'
+					} md:text-lg md:italic md:px-5 md:flex-[0_0_30%] flex-[0_0_50%] px-3 text-left`}
+				>
+					Советы по Энергосбережению
+				</button>
 			</Carousel>
-			{/* {blogView === 1 && (
-				<ServiceDescription>
-					{washingMachinesServices.map(
-						washingMachinesService => (
-							<ServiceDescriptionCard
-								key={washingMachinesService.id}
-								title={
-									washingMachinesService.title
-								}
-								price={
-									washingMachinesService.price
-								}
-							/>
-						)
-					)}
-				</ServiceDescription>
-			)}
-			{blogView === 2 && (
-				<ServiceDescription>
-					{dishwashersServices.map(
-						dishwashersService => (
-							<ServiceDescriptionCard
-								key={dishwashersService.id}
-								title={dishwashersService.title}
-								price={dishwashersService.price}
-							/>
-						)
-					)}
-				</ServiceDescription>
-			)}
-			{blogView === 3 && (
-				<ServiceDescription>
-					{washingMachinesServices.map(
-						washingMachinesService => (
-							<ServiceDescriptionCard
-								key={washingMachinesService.id}
-								title={
-									washingMachinesService.title
-								}
-								price={
-									washingMachinesService.price
-								}
-							/>
-						)
-					)}
-				</ServiceDescription>
-			)}
-			{blogView === 4 && (
-				<ServiceDescription>
-					{washingMachinesServices.map(
-						washingMachinesService => (
-							<ServiceDescriptionCard
-								key={washingMachinesService.id}
-								title={
-									washingMachinesService.title
-								}
-								price={
-									washingMachinesService.price
-								}
-							/>
-						)
-					)}
-				</ServiceDescription>
-			)} */}
+			<h1 className='md:block hidden font-bold text-center'>
+				Самые последние
+			</h1>
+			{window.innerWidth < 768
+				? blogView === 1 && (
+						<Carousel
+							title='Самые последние'
+							type='blog'
+						>
+							{washingMachinesBlogs.map(
+								washingMachinesBlog => (
+									<BlogCard
+										key={washingMachinesBlog.id}
+										id={washingMachinesBlog.id}
+										title={
+											washingMachinesBlog.title
+										}
+										type={
+											washingMachinesBlog.type
+										}
+										imgSrc={
+											washingMachinesBlog.imgSrc
+										}
+										date={
+											washingMachinesBlog.date
+										}
+									/>
+								)
+							)}
+						</Carousel>
+				  )
+				: blogView === 1 && (
+						<div className='grid grid-rows-2 grid-cols-4 gap-4'>
+							{washingMachinesBlogs.map(
+								washingMachinesBlog => (
+									<BlogCard
+										key={washingMachinesBlog.id}
+										id={washingMachinesBlog.id}
+										title={
+											washingMachinesBlog.title
+										}
+										body={
+											washingMachinesBlog.body
+										}
+										type={
+											washingMachinesBlog.type
+										}
+										imgSrc={
+											washingMachinesBlog.imgSrc
+										}
+										date={
+											washingMachinesBlog.date
+										}
+									/>
+								)
+							)}
+						</div>
+				  )}
+			{window.innerWidth < 768
+				? blogView === 2 && (
+						<Carousel
+							title='Самые последние'
+							type='blog'
+						>
+							{washingMachinesBlogs.map(
+								washingMachinesBlog => (
+									<BlogCard
+										key={washingMachinesBlog.id}
+										id={washingMachinesBlog.id}
+										title={
+											washingMachinesBlog.title
+										}
+										type={
+											washingMachinesBlog.type
+										}
+										imgSrc={
+											washingMachinesBlog.imgSrc
+										}
+										date={
+											washingMachinesBlog.date
+										}
+									/>
+								)
+							)}
+						</Carousel>
+				  )
+				: blogView === 2 && (
+						<div className='grid grid-rows-2 grid-cols-4 gap-4'>
+							{washingMachinesBlogs.map(
+								washingMachinesBlog => (
+									<BlogCard
+										key={washingMachinesBlog.id}
+										id={washingMachinesBlog.id}
+										title={
+											washingMachinesBlog.title
+										}
+										body={
+											washingMachinesBlog.body
+										}
+										type={
+											washingMachinesBlog.type
+										}
+										imgSrc={
+											washingMachinesBlog.imgSrc
+										}
+										date={
+											washingMachinesBlog.date
+										}
+									/>
+								)
+							)}
+						</div>
+				  )}
+			{window.innerWidth < 768
+				? blogView === 3 && (
+						<Carousel
+							title='Самые последние'
+							type='blog'
+						>
+							{washingMachinesBlogs.map(
+								washingMachinesBlog => (
+									<BlogCard
+										key={washingMachinesBlog.id}
+										id={washingMachinesBlog.id}
+										title={
+											washingMachinesBlog.title
+										}
+										type={
+											washingMachinesBlog.type
+										}
+										imgSrc={
+											washingMachinesBlog.imgSrc
+										}
+										date={
+											washingMachinesBlog.date
+										}
+									/>
+								)
+							)}
+						</Carousel>
+				  )
+				: blogView === 3 && (
+						<div className='grid grid-rows-2 grid-cols-4 gap-4'>
+							{washingMachinesBlogs.map(
+								washingMachinesBlog => (
+									<BlogCard
+										key={washingMachinesBlog.id}
+										id={washingMachinesBlog.id}
+										title={
+											washingMachinesBlog.title
+										}
+										body={
+											washingMachinesBlog.body
+										}
+										type={
+											washingMachinesBlog.type
+										}
+										imgSrc={
+											washingMachinesBlog.imgSrc
+										}
+										date={
+											washingMachinesBlog.date
+										}
+									/>
+								)
+							)}
+						</div>
+				  )}
+			{window.innerWidth < 768
+				? blogView === 4 && (
+						<Carousel
+							title='Самые последние'
+							type='blog'
+						>
+							{washingMachinesBlogs.map(
+								washingMachinesBlog => (
+									<BlogCard
+										key={washingMachinesBlog.id}
+										id={washingMachinesBlog.id}
+										title={
+											washingMachinesBlog.title
+										}
+										type={
+											washingMachinesBlog.type
+										}
+										imgSrc={
+											washingMachinesBlog.imgSrc
+										}
+										date={
+											washingMachinesBlog.date
+										}
+									/>
+								)
+							)}
+						</Carousel>
+				  )
+				: blogView === 4 && (
+						<div className='grid grid-rows-2 grid-cols-4 gap-4'>
+							{washingMachinesBlogs.map(
+								washingMachinesBlog => (
+									<BlogCard
+										key={washingMachinesBlog.id}
+										id={washingMachinesBlog.id}
+										title={
+											washingMachinesBlog.title
+										}
+										body={
+											washingMachinesBlog.body
+										}
+										type={
+											washingMachinesBlog.type
+										}
+										imgSrc={
+											washingMachinesBlog.imgSrc
+										}
+										date={
+											washingMachinesBlog.date
+										}
+									/>
+								)
+							)}
+						</div>
+				  )}
 		</div>
 	);
 };

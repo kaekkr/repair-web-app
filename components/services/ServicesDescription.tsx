@@ -5,7 +5,6 @@ import {
 	dishwashersServices,
 	washingMachinesServices,
 } from '@/data';
-import ServiceDescription from './ServiceDescription';
 import { useState } from 'react';
 import Carousel from '../common/Carousel';
 
@@ -110,7 +109,7 @@ const ServicesDescription = () => {
 				</div>
 			)}
 			{serviceView === 1 && (
-				<ServiceDescription>
+				<div className='md:grid-cols-4 grid grid-rows-2 grid-cols-2 gap-4'>
 					{washingMachinesServices
 						.slice(
 							0,
@@ -127,10 +126,10 @@ const ServicesDescription = () => {
 								}
 							/>
 						))}
-				</ServiceDescription>
+				</div>
 			)}
 			{serviceView === 2 && (
-				<ServiceDescription>
+				<div className='md:grid-cols-4 grid grid-rows-2 grid-cols-2 gap-4'>
 					{dishwashersServices
 						.slice(
 							0,
@@ -143,10 +142,10 @@ const ServicesDescription = () => {
 								price={dishwashersService.price}
 							/>
 						))}
-				</ServiceDescription>
+				</div>
 			)}
 			{serviceView === 3 && (
-				<ServiceDescription>
+				<div className='md:grid-cols-4 grid grid-rows-2 grid-cols-2 gap-4'>
 					{washingMachinesServices
 						.slice(
 							0,
@@ -163,10 +162,10 @@ const ServicesDescription = () => {
 								}
 							/>
 						))}
-				</ServiceDescription>
+				</div>
 			)}
 			{serviceView === 4 && (
-				<ServiceDescription>
+				<div className='md:grid-cols-4 grid grid-rows-2 grid-cols-2 gap-4'>
 					{dishwashersServices
 						.slice(
 							0,
@@ -179,7 +178,7 @@ const ServicesDescription = () => {
 								price={dishwashersService.price}
 							/>
 						))}
-				</ServiceDescription>
+				</div>
 			)}
 		</div>
 	);
