@@ -14,6 +14,7 @@ interface CarouselProps {
 	title?: string;
 	body?: string;
 	type: string;
+	style?: object;
 }
 
 const Carousel = ({
@@ -21,11 +22,19 @@ const Carousel = ({
 	title,
 	body,
 	type,
+	style,
 }: CarouselProps) => {
-	const options =
-		type === 'brand' || type === 'button'
-			? { dragFree: true }
-			: {};
+	let options;
+	if (typeof window !== 'undefined') {
+		if (window.innerWidth < 768) {
+			options =
+				type === 'brand' || type === 'button'
+					? { dragFree: true }
+					: {};
+		} else {
+			options = { dragFree: true };
+		}
+	}
 	const [emblaRef, emblaApi] =
 		useEmblaCarousel(options);
 
@@ -76,25 +85,29 @@ const Carousel = ({
 				type !== 'button' &&
 				'bg-yellow-500 py-12 rounded-2xl px-4 space-y-10'
 			} ${
-				type === 'brand' && 'h-52 space-y-5'
+				type === 'brand' &&
+				'md:h-auto h-52 space-y-5'
 			} md:items-center md:space-y-20 flex flex-col`}
+			style={style}
 		>
-			<div className='space-y-3'>
-				<h1
-					className={`${
-						type !== 'brand' ? 'text-white' : ''
-					} md:max-w-md md:text-center max-w-xs font-bold`}
-				>
-					{title}
-				</h1>
-				{body && (
-					<h2 className='md:text-center text-white max-w-md'>
-						{body}
-					</h2>
-				)}
-			</div>
+			{title && (
+				<div className='space-y-3'>
+					<h1
+						className={`${
+							type !== 'brand' ? 'text-white' : ''
+						} md:max-w-lg md:text-center max-w-xs font-bold`}
+					>
+						{title}
+					</h1>
+					{body && (
+						<h2 className='md:text-lg md:text-center text-white max-w-lg'>
+							{body}
+						</h2>
+					)}
+				</div>
+			)}
 			<div
-				className='overflow-hidden'
+				className='overflow-hidden max-w-[100%]'
 				ref={emblaRef}
 			>
 				<div className='flex space-x-5'>

@@ -34,7 +34,7 @@ const AboutPage = () => {
 			>
 				{certificates.map(certificate => (
 					<div
-						className='md:h-64 relative flex-[0_0_60%]'
+						className='md:flex-[0_0_30%] md:h-auto h-48 relative flex-[0_0_70%]'
 						key={certificate.id}
 					>
 						<Image

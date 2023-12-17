@@ -31,7 +31,7 @@ const AriclePage = ({
 				<div className='flex items-center space-x-1'>
 					<h2>{washingMachinesBlog.type}</h2>
 					<Image
-						src='icons/arrow-right-icon.svg'
+						src='/icons/arrow-right-icon.svg'
 						alt='arrow right icon'
 						width={10}
 						height={10}

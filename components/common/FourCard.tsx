@@ -15,7 +15,7 @@ const FourCard = ({
 }: FourCardProps) => {
 	return (
 		<div
-			className={`md:px-6 px-3 pt-10 pb-8 bg-white rounded-2xl max-w-[20rem] space-y-5 ${
+			className={`md:pb-16 md:px-6 px-3 pt-10 pb-8 bg-white rounded-2xl max-w-[20rem] space-y-5 ${
 				type === 2
 					? 'bg-yellow-500 text-white'
 					: ''

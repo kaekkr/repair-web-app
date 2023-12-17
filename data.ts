@@ -11,28 +11,28 @@ export const advantages: Advantage[] = [
 		id: 1,
 		title: 'Бесплатное диагностика',
 		body: 'Наши мастера обладают высокой квалификацией и опытом в области ремонта бытовой техники.',
-		imgSrc: 'icons/diagnostic-icon.svg',
+		imgSrc: '/icons/diagnostic-icon.svg',
 		type: 1,
 	},
 	{
 		id: 2,
 		title: 'Профи мастеры',
 		body: 'Наши мастера обладают высокой квалификацией и опытом в области ремонта бытовой техники.',
-		imgSrc: 'icons/people-icon-2-white.svg',
+		imgSrc: '/icons/people-icon-2-white.svg',
 		type: 2,
 	},
 	{
 		id: 3,
 		title: 'Отзывы клиентов',
 		body: 'Наши клиенты доверяют нам, оставляя положительные отзывы, которые подтверждают качество наших услуг.',
-		imgSrc: 'icons/message-icon.svg',
+		imgSrc: '/icons/message-icon.svg',
 		type: 1,
 	},
 	{
 		id: 4,
 		title: 'Гарантия качества',
 		body: 'Предоставляем гарантию на выполненные работы и установленные запчасти, обеспечивая долгосрочную надежность ремонта на год.',
-		imgSrc: 'icons/guard-icon.svg',
+		imgSrc: '/icons/guard-icon.svg',
 		type: 1,
 	},
 ];
@@ -40,31 +40,31 @@ export const advantages: Advantage[] = [
 export const brands: Brand[] = [
 	{
 		id: 1,
-		imgSrc: 'brands/midea.svg',
+		imgSrc: '/brands/midea.svg',
 	},
 	{
 		id: 2,
-		imgSrc: 'brands/lg.svg',
+		imgSrc: '/brands/lg.svg',
 	},
 	{
 		id: 3,
-		imgSrc: 'brands/beko.svg',
+		imgSrc: '/brands/beko.svg',
 	},
 	{
 		id: 4,
-		imgSrc: 'brands/bosch.svg',
+		imgSrc: '/brands/bosch.svg',
 	},
 	{
 		id: 5,
-		imgSrc: 'brands/elecrtrolux.svg',
+		imgSrc: '/brands/elecrtrolux.svg',
 	},
 	{
 		id: 6,
-		imgSrc: 'brands/samsung.svg',
+		imgSrc: '/brands/samsung.svg',
 	},
 	{
 		id: 7,
-		imgSrc: 'brands/indesit.svg',
+		imgSrc: '/brands/indesit.svg',
 	},
 ];
 
@@ -148,7 +148,7 @@ export const masters: Master[] = [
 		body: 'Цена договорная Стиральная машина, холодильник',
 		location: '2.7 км от вас',
 		experience: '3 года',
-		imgSrc: 'human-test.svg',
+		imgSrc: '/human-test.svg',
 	},
 	{
 		id: 2,
@@ -156,7 +156,7 @@ export const masters: Master[] = [
 		body: 'Цена договорная Стиральная машина, холодильник',
 		location: '2.7 км от вас',
 		experience: '3 года',
-		imgSrc: 'human-test.svg',
+		imgSrc: '/human-test.svg',
 	},
 	{
 		id: 3,
@@ -164,7 +164,7 @@ export const masters: Master[] = [
 		body: 'Цена договорная Стиральная машина, холодильник',
 		location: '2.7 км от вас',
 		experience: '3 года',
-		imgSrc: 'human-test.svg',
+		imgSrc: '/human-test.svg',
 	},
 	{
 		id: 4,
@@ -172,7 +172,7 @@ export const masters: Master[] = [
 		body: 'Цена договорная Стиральная машина, холодильник',
 		location: '2.7 км от вас',
 		experience: '3 года',
-		imgSrc: 'human-test.svg',
+		imgSrc: '/human-test.svg',
 	},
 	{
 		id: 5,
@@ -180,7 +180,7 @@ export const masters: Master[] = [
 		body: 'Цена договорная Стиральная машина, холодильник',
 		location: '2.7 км от вас',
 		experience: '3 года',
-		imgSrc: 'human-test.svg',
+		imgSrc: '/human-test.svg',
 	},
 	{
 		id: 6,
@@ -188,7 +188,7 @@ export const masters: Master[] = [
 		body: 'Цена договорная Стиральная машина, холодильник',
 		location: '2.7 км от вас',
 		experience: '3 года',
-		imgSrc: 'human-test.svg',
+		imgSrc: '/human-test.svg',
 	},
 	{
 		id: 7,
@@ -196,7 +196,7 @@ export const masters: Master[] = [
 		body: 'Цена договорная Стиральная машина, холодильник',
 		location: '2.7 км от вас',
 		experience: '3 года',
-		imgSrc: 'human-test.svg',
+		imgSrc: '/human-test.svg',
 	},
 	{
 		id: 8,
@@ -204,7 +204,7 @@ export const masters: Master[] = [
 		body: 'Цена договорная Стиральная машина, холодильник',
 		location: '2.7 км от вас',
 		experience: '3 года',
-		imgSrc: 'human-test.svg',
+		imgSrc: '/human-test.svg',
 	},
 	{
 		id: 9,
@@ -212,7 +212,7 @@ export const masters: Master[] = [
 		body: 'Цена договорная Стиральная машина, холодильник',
 		location: '2.7 км от вас',
 		experience: '3 года',
-		imgSrc: 'human-test.svg',
+		imgSrc: '/human-test.svg',
 	},
 ];
 
@@ -244,28 +244,28 @@ export const moreAboutCompany = [
 		id: 1,
 		title: 'Миссия и Ценности',
 		body: 'Наша миссия - предоставлять высококачественные и надежные услуги по ремонту, создавая комфорт в каждом доме. Мы ценим профессионализм, прозрачность и индивидуальный подход к каждому клиенту.',
-		imgSrc: 'icons/mission-icon.svg',
+		imgSrc: '/icons/mission-icon.svg',
 		type: 1,
 	},
 	{
 		id: 2,
 		title: 'Цели Компании',
 		body: 'Мы стремимся быть лучшими в своей области, обеспечивая нашим клиентам быстрый и эффективный ремонт, а также выдающийся уровень обслуживания.',
-		imgSrc: 'icons/goal-icon.svg',
+		imgSrc: '/icons/goal-icon.svg',
 		type: 2,
 	},
 	{
 		id: 3,
 		title: 'Наши Мастера',
 		body: 'Наша команда состоит из квалифицированных мастеров, прошедших строгий отбор и обучение. Их опыт и профессионализм гарантируют, что ваша техника находится в надежных руках.',
-		imgSrc: 'icons/people-icon-2-black.svg',
+		imgSrc: '/icons/people-icon-2-black.svg',
 		type: 1,
 	},
 	{
 		id: 4,
 		title: 'Миссия и Ценности',
 		body: 'Предоставляем гарантию на выполненные работы и установленные запчасти, обеспечивая долгосрочную надежность ремонта на год.',
-		imgSrc: 'icons/guard-icon.svg',
+		imgSrc: '/icons/guard-icon.svg',
 		type: 1,
 	},
 ];
@@ -273,31 +273,31 @@ export const moreAboutCompany = [
 export const certificates = [
 	{
 		id: 1,
-		imgSrc: 'certificates/certificate-1.svg',
+		imgSrc: '/certificates/certificate-1.svg',
 	},
 	{
 		id: 2,
-		imgSrc: 'certificates/certificate-2.svg',
+		imgSrc: '/certificates/certificate-2.svg',
 	},
 	{
 		id: 3,
-		imgSrc: 'certificates/certificate-1.svg',
+		imgSrc: '/certificates/certificate-1.svg',
 	},
 	{
 		id: 4,
-		imgSrc: 'certificates/certificate-2.svg',
+		imgSrc: '/certificates/certificate-2.svg',
 	},
 	{
 		id: 5,
-		imgSrc: 'certificates/certificate-1.svg',
+		imgSrc: '/certificates/certificate-1.svg',
 	},
 	{
 		id: 6,
-		imgSrc: 'certificates/certificate-2.svg',
+		imgSrc: '/certificates/certificate-2.svg',
 	},
 	{
 		id: 7,
-		imgSrc: 'certificates/certificate-1.svg',
+		imgSrc: '/certificates/certificate-1.svg',
 	},
 ];
 
@@ -306,25 +306,25 @@ export const interestingFacts = [
 		id: 1,
 		title: '650',
 		body: 'Довольных клиентов',
-		imgSrc: 'icons/thumb-up-icon-2.svg',
+		imgSrc: '/icons/thumb-up-icon-2.svg',
 	},
 	{
 		id: 2,
 		title: '8 000',
 		body: 'Средняя стоимость ремонта(тг)',
-		imgSrc: 'icons/tenge-icon.svg',
+		imgSrc: '/icons/tenge-icon.svg',
 	},
 	{
 		id: 3,
 		title: '46',
 		body: 'Средняя время ремонта(мин)',
-		imgSrc: 'icons/clock-icon.svg',
+		imgSrc: '/icons/clock-icon.svg',
 	},
 	{
 		id: 4,
 		title: '104',
 		body: 'Положительных отзывов',
-		imgSrc: 'icons/star-icon.svg',
+		imgSrc: '/icons/star-icon.svg',
 	},
 ];
 
@@ -446,7 +446,7 @@ export const washingMachinesBlogs = [
 		type: 'Ремонт Стиральных Машин',
 		title: 'Названия темы блога блогаблога',
 		body: 'краткое описание темыкраткое описание темыкраткое описание темыкраткое описание темы',
-		imgSrc: 'blog/washing-machine-blog.svg',
+		imgSrc: '/blog/washing-machine-blog.svg',
 		date: '04/09/23',
 	},
 	{
@@ -454,7 +454,7 @@ export const washingMachinesBlogs = [
 		type: 'Ремонт Стиральных Машин',
 		title: 'Названия темы блога блогаблога',
 		body: 'краткое описание темыкраткое описание темыкраткое описание темыкраткое описание темы',
-		imgSrc: 'blog/washing-machine-blog.svg',
+		imgSrc: '/blog/washing-machine-blog.svg',
 		date: '04/09/23',
 	},
 	{
@@ -462,7 +462,7 @@ export const washingMachinesBlogs = [
 		type: 'Ремонт Стиральных Машин',
 		title: 'Названия темы блога блогаблога',
 		body: 'краткое описание темыкраткое описание темыкраткое описание темыкраткое описание темы',
-		imgSrc: 'blog/washing-machine-blog.svg',
+		imgSrc: '/blog/washing-machine-blog.svg',
 		date: '04/09/23',
 	},
 	{
@@ -470,7 +470,7 @@ export const washingMachinesBlogs = [
 		type: 'Ремонт Стиральных Машин',
 		title: 'Названия темы блога блогаблога',
 		body: 'краткое описание темыкраткое описание темыкраткое описание темыкраткое описание темы',
-		imgSrc: 'blog/washing-machine-blog.svg',
+		imgSrc: '/blog/washing-machine-blog.svg',
 		date: '04/09/23',
 	},
 	{
@@ -478,7 +478,7 @@ export const washingMachinesBlogs = [
 		type: 'Ремонт Стиральных Машин',
 		title: 'Названия темы блога блогаблога',
 		body: 'краткое описание темыкраткое описание темыкраткое описание темыкраткое описание темы',
-		imgSrc: 'blog/washing-machine-blog.svg',
+		imgSrc: '/blog/washing-machine-blog.svg',
 		date: '04/09/23',
 	},
 	{
@@ -486,7 +486,7 @@ export const washingMachinesBlogs = [
 		type: 'Ремонт Стиральных Машин',
 		title: 'Названия темы блога блогаблога',
 		body: 'краткое описание темыкраткое описание темыкраткое описание темыкраткое описание темы',
-		imgSrc: 'blog/washing-machine-blog.svg',
+		imgSrc: '/blog/washing-machine-blog.svg',
 		date: '04/09/23',
 	},
 	{
@@ -494,7 +494,7 @@ export const washingMachinesBlogs = [
 		type: 'Ремонт Стиральных Машин',
 		title: 'Названия темы блога блогаблога',
 		body: 'краткое описание темыкраткое описание темыкраткое описание темыкраткое описание темы',
-		imgSrc: 'blog/washing-machine-blog.svg',
+		imgSrc: '/blog/washing-machine-blog.svg',
 		date: '04/09/23',
 	},
 	{
@@ -502,7 +502,7 @@ export const washingMachinesBlogs = [
 		type: 'Ремонт Стиральных Машин',
 		title: 'Названия темы блога блогаблога',
 		body: 'краткое описание темыкраткое описание темыкраткое описание темыкраткое описание темы',
-		imgSrc: 'blog/washing-machine-blog.svg',
+		imgSrc: '/blog/washing-machine-blog.svg',
 		date: '04/09/23',
 	},
 ];

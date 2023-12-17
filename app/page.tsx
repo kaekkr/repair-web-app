@@ -1,9 +1,11 @@
 import Carousel from '@/components/common/Carousel';
+import FormCard from '@/components/common/FormCard';
+import Consultation from '@/components/common/FormCard';
 import FourCard from '@/components/common/FourCard';
 import FourCards from '@/components/common/FourCards';
-import FourCardsAlternate from '@/components/common/FourCardsAlternate';
+import FourCards2 from '@/components/common/FourCards2';
+import Hero from '@/components/common/Hero';
 import FeedbackCard from '@/components/home/FeedbackCard';
-import HeroHome from '@/components/home/HeroHome';
 import MasterCard from '@/components/home/MasterCard';
 import WorkOrServiceCard from '@/components/home/WorkOrServiceCard';
 import {
@@ -18,10 +20,22 @@ import Image from 'next/image';
 export default function Home() {
 	return (
 		<main className='md:space-y-20 space-y-14'>
-			<HeroHome />
+			<Hero imgSrc='/bg/hero-home-bg.svg'>
+				<FormCard
+					title='Экспертный ремонт  бытовой  техники в Алмате на дому'
+					body='Закажите бесплатную консультацию за несколько минут.
+Позвоните по 87022224141 или же напишите нам по ватсапу'
+					selectOptions={[
+						'Выберите технику',
+						'1',
+						'2',
+						'3',
+					]}
+				/>
+			</Hero>
 			<FourCards
 				title='Почему вы должны выбрать нас ?'
-				style={{ marginTop: '28rem' }}
+				style={{ marginTop: '20rem' }}
 			>
 				{advantages.map(advantage => (
 					<FourCard
@@ -40,14 +54,14 @@ export default function Home() {
 				{brands.map(brand => {
 					return (
 						<div
-							className='relative h-64 flex-[0_0_50%]'
+							className='md:flex-[0_0_20%] relative flex-[0_0_50%]'
 							key={brand.id}
 						>
 							<Image
 								src={brand.imgSrc}
 								alt={brand.imgSrc}
-								width={200}
-								height={200}
+								width={300}
+								height={300}
 							/>
 						</div>
 					);
@@ -67,7 +81,7 @@ export default function Home() {
 					/>
 				))}
 			</Carousel>
-			<FourCardsAlternate title='Как мы работаем'>
+			<FourCards2 title='Как мы работаем'>
 				{works.map(work => (
 					<WorkOrServiceCard
 						key={work.id}
@@ -76,19 +90,21 @@ export default function Home() {
 						body={work.body}
 					/>
 				))}
-			</FourCardsAlternate>
-			<Carousel title='Наши мастера' type=''>
-				{masters.map(master => (
-					<MasterCard
-						key={master.id}
-						body={master.body}
-						name={master.name}
-						location={master.location}
-						experience={master.experience}
-						imgSrc={master.imgSrc}
-					/>
-				))}
-			</Carousel>
+			</FourCards2>
+			<div className='mt-40'>
+				<Carousel title='Наши мастера' type=''>
+					{masters.map(master => (
+						<MasterCard
+							key={master.id}
+							body={master.body}
+							name={master.name}
+							location={master.location}
+							experience={master.experience}
+							imgSrc={master.imgSrc}
+						/>
+					))}
+				</Carousel>
+			</div>
 		</main>
 	);
 }

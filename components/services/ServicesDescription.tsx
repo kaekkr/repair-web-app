@@ -21,7 +21,7 @@ const ServicesDescription = () => {
 			<h1 className='md:text-center font-bold'>
 				Описание услуг
 			</h1>
-			{window.innerWidth < 768 ? (
+			{typeof window !== "undefined" && window.innerWidth < 768 ? (
 				<Carousel type='button'>
 					<button
 						onClick={() => changeServiceView(1)}
@@ -113,7 +113,7 @@ const ServicesDescription = () => {
 					{washingMachinesServices
 						.slice(
 							0,
-							window.innerWidth >= 768 ? 8 : 4
+							typeof window !== "undefined" && window.innerWidth >= 768 ? 8 : 4
 						)
 						.map(washingMachinesService => (
 							<ServiceDescriptionCard
@@ -133,7 +133,7 @@ const ServicesDescription = () => {
 					{dishwashersServices
 						.slice(
 							0,
-							window.innerWidth >= 768 ? 8 : 4
+							typeof window !== "undefined" && window.innerWidth >= 768 ? 8 : 4
 						)
 						.map(dishwashersService => (
 							<ServiceDescriptionCard
@@ -149,7 +149,7 @@ const ServicesDescription = () => {
 					{washingMachinesServices
 						.slice(
 							0,
-							window.innerWidth >= 768 ? 8 : 4
+							typeof window !== "undefined" && window.innerWidth >= 768 ? 8 : 4
 						)
 						.map(washingMachinesService => (
 							<ServiceDescriptionCard
@@ -169,7 +169,7 @@ const ServicesDescription = () => {
 					{dishwashersServices
 						.slice(
 							0,
-							window.innerWidth >= 768 ? 8 : 4
+							typeof window !== "undefined" && window.innerWidth >= 768 ? 8 : 4
 						)
 						.map(dishwashersService => (
 							<ServiceDescriptionCard

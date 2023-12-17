@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Consultation from './Consultation';
+import Consultation from '../common/FormCard';
 
 const HeroHome = () => {
 	return (

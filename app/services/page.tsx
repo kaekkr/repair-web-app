@@ -1,6 +1,6 @@
 import HeroAbout from '@/components/about/HeroAbout';
 import Carousel from '@/components/common/Carousel';
-import FourCardsAlternate from '@/components/common/FourCardsAlternate';
+import FourCards2 from '@/components/common/FourCards2';
 import WorkOrServiceCard from '@/components/home/WorkOrServiceCard';
 import ServicesDescription from '@/components/services/ServicesDescription';
 import { brands, services } from '@/data';
@@ -10,7 +10,7 @@ const ServicesPage = () => {
 	return (
 		<main className='space-y-20'>
 			<HeroAbout />
-			<FourCardsAlternate title='Наши услуги'>
+			<FourCards2 title='Наши услуги'>
 				{services.map(service => (
 					<WorkOrServiceCard
 						key={service.id}
@@ -19,7 +19,7 @@ const ServicesPage = () => {
 						body={service.body}
 					/>
 				))}
-			</FourCardsAlternate>
+			</FourCards2>
 			<ServicesDescription />
 			<Carousel
 				title='Ремонт всех марок и моделей'
@@ -28,14 +28,14 @@ const ServicesPage = () => {
 				{brands.map(brand => {
 					return (
 						<div
-							className='relative h-64 flex-[0_0_50%]'
+							className='md:flex-[0_0_20%] relative flex-[0_0_50%]'
 							key={brand.id}
 						>
 							<Image
 								src={brand.imgSrc}
 								alt={brand.imgSrc}
-								width={200}
-								height={200}
+								width={300}
+								height={300}
 							/>
 						</div>
 					);

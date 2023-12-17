@@ -1,7 +1,8 @@
 'use client';
 
-import { washingMachinesBlogs } from '@/data';
 import { useState } from 'react';
+
+import { washingMachinesBlogs } from '@/data';
 import Carousel from '../common/Carousel';
 import BlogCard from './BlogCard';
 
@@ -60,7 +61,7 @@ const Blogs = () => {
 			<h1 className='md:block hidden font-bold text-center'>
 				Самые последние
 			</h1>
-			{window.innerWidth < 768
+			{typeof window !== "undefined" && window.innerWidth < 768
 				? blogView === 1 && (
 						<Carousel
 							title='Самые последние'
@@ -115,7 +116,7 @@ const Blogs = () => {
 							)}
 						</div>
 				  )}
-			{window.innerWidth < 768
+			{typeof window !== "undefined" && window.innerWidth < 768
 				? blogView === 2 && (
 						<Carousel
 							title='Самые последние'
@@ -170,7 +171,7 @@ const Blogs = () => {
 							)}
 						</div>
 				  )}
-			{window.innerWidth < 768
+			{typeof window !== "undefined" && window.innerWidth < 768
 				? blogView === 3 && (
 						<Carousel
 							title='Самые последние'
@@ -225,7 +226,7 @@ const Blogs = () => {
 							)}
 						</div>
 				  )}
-			{window.innerWidth < 768
+			{typeof window !== "undefined" && window.innerWidth < 768
 				? blogView === 4 && (
 						<Carousel
 							title='Самые последние'

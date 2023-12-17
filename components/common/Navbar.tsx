@@ -17,7 +17,7 @@ const Navbar = () => {
 		<nav className='md:bg-[#F3F3F3] md:p-0 bg-white rounded-2xl py-5 px-6 mb-10 space-y-5'>
 			<div className='flex justify-between items-center'>
 				<Image
-					src='logo.svg'
+					src='/logo.svg'
 					alt='logo'
 					width={48}
 					height={48}
@@ -62,7 +62,7 @@ const Navbar = () => {
 			{isHamburgerOpen && (
 				<div
 					className={`${
-						isHamburgerOpen && 'animate-flip-down'
+						isHamburgerOpen && 'animate-fade-down'
 					}`}
 				>
 					<LinksAlternate />

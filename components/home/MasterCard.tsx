@@ -16,7 +16,7 @@ const MasterCard = ({
 	imgSrc,
 }: MasterCardProps) => {
 	return (
-		<div className='flex-[0_0_75%] bg-white rounded-2xl py-6 space-y-5'>
+		<div className='md:flex-[0_0_20%] flex-[0_0_75%] bg-white rounded-2xl py-6 space-y-5'>
 			<div className='flex items-center space-x-7 px-3'>
 				<Image
 					src={imgSrc}
@@ -28,7 +28,7 @@ const MasterCard = ({
 					<h2 className='font-bold'>{name}</h2>
 					<div className='flex items-center space-x-3'>
 						<Image
-							src='icons/marker-icon.svg'
+							src='/icons/marker-icon.svg'
 							alt='marker icon'
 							width={12}
 							height={12}
@@ -39,7 +39,7 @@ const MasterCard = ({
 					</div>
 					<div className='flex items-center space-x-2'>
 						<Image
-							src='icons/work-icon.svg'
+							src='/icons/work-icon.svg'
 							alt='marker icon'
 							width={15}
 							height={15}

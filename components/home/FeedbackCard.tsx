@@ -14,12 +14,12 @@ const FeedbackCard = ({
 	date,
 }: FeedbackCardProps) => {
 	return (
-		<div className='md:space-y-7 md:px-5 space-y-5 flex-[0_0_70%] py-8 px-4 flex flex-col justify-between bg-white rounded-2xl'>
+		<div className='md:space-y-7 md:px-5 space-y-5 md:flex-[0_0_20%] flex-[0_0_70%] py-8 px-4 flex flex-col justify-between bg-white rounded-2xl'>
 			<div className='h-1/2 flex flex-col justify-between space-y-3'>
 				<div className='flex justify-between items-center'>
 					<div className='md:space-x-3 space-x-2 flex items-center'>
 						<Image
-							src='icons/thumb-up-emoji-icon.svg'
+							src='/icons/thumb-up-emoji-icon.svg'
 							alt='thumb up emoji'
 							width={25}
 							height={25}
@@ -34,7 +34,7 @@ const FeedbackCard = ({
 			</div>
 			<div className='flex space-x-3'>
 				<Image
-					src='icons/people-icon-2-black.svg'
+					src='/icons/people-icon-2-black.svg'
 					alt='people icon 2'
 					width={15}
 					height={15}
