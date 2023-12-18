@@ -1,8 +1,8 @@
-import HeroAbout from '@/components/about/HeroAbout';
-import InterestingFactsCard from '@/components/about/InterestingFactsCard';
-import Carousel from '@/components/common/Carousel';
-import FourCard from '@/components/common/FourCard';
-import FourCards from '@/components/common/FourCards';
+import HeroAbout from '@/app/components/about/HeroAbout';
+import InterestingFactsCard from '@/app/components/about/InterestingFactsCard';
+import Carousel from '@/app/components/common/Carousel';
+import FourCard from '@/app/components/common/FourCard';
+import FourCards from '@/app/components/common/FourCards';
 import {
 	certificates,
 	interestingFacts,
@@ -10,7 +10,11 @@ import {
 } from '@/data';
 import Image from 'next/image';
 
-const AboutPage = () => {
+const AboutPage = ({
+	params: { lang },
+}: {
+	params: { lang: string };
+}) => {
 	return (
 		<main className='md:space-y-20 space-y-14'>
 			<HeroAbout />

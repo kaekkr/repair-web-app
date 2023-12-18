@@ -1,8 +1,12 @@
-import Carousel from '@/components/common/Carousel';
-import FeedbackCard from '@/components/home/FeedbackCard';
+import Carousel from '@/app/components/common/Carousel';
+import FeedbackCard from '@/app/components/home/FeedbackCard';
 import { feedbacks } from '@/data';
 
-const ReviewsPage = () => {
+const ReviewsPage = ({
+	params: { lang },
+}: {
+	params: { lang: string };
+}) => {
 	return (
 		<main>
 			<Carousel

@@ -1,10 +1,14 @@
-import Carousel from '@/components/common/Carousel';
-import FormCard from '@/components/common/FormCard';
-import Hero from '@/components/common/Hero';
-import MasterCard from '@/components/home/MasterCard';
+import Carousel from '@/app/components/common/Carousel';
+import FormCard from '@/app/components/common/FormCard';
+import Hero from '@/app/components/common/Hero';
+import MasterCard from '@/app/components/home/MasterCard';
 import { masters } from '@/data';
 
-const MastersPage = () => {
+const MastersPage = ({
+	params: { lang },
+}: {
+	params: { lang: string };
+}) => {
 	return (
 		<main className='space-y-20'>
 			<Hero imgSrc='/bg/hero-masters-bg.svg'>

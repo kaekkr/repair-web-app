@@ -1,12 +1,16 @@
-import HeroAbout from '@/components/about/HeroAbout';
-import Carousel from '@/components/common/Carousel';
-import FourCards2 from '@/components/common/FourCards2';
-import WorkOrServiceCard from '@/components/home/WorkOrServiceCard';
-import ServicesDescription from '@/components/services/ServicesDescription';
+import HeroAbout from '@/app/components/about/HeroAbout';
+import Carousel from '@/app/components/common/Carousel';
+import FourCards2 from '@/app/components/common/FourCards2';
+import WorkOrServiceCard from '@/app/components/home/WorkOrServiceCard';
+import ServicesDescription from '@/app/components/services/ServicesDescription';
 import { brands, services } from '@/data';
 import Image from 'next/image';
 
-const ServicesPage = () => {
+const ServicesPage = ({
+	params: { lang },
+}: {
+	params: { lang: string };
+}) => {
 	return (
 		<main className='space-y-20'>
 			<HeroAbout />

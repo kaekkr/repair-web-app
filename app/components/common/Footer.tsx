@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Footer = () => {
+const Footer = ({ lang }: { lang: string }) => {
 	return (
 		<footer className='md:space-y-10 space-y-5 mt-10'>
 			<h1 className='md:text-center font-bold'>

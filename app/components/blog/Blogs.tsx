@@ -61,7 +61,8 @@ const Blogs = () => {
 			<h1 className='md:block hidden font-bold text-center'>
 				Самые последние
 			</h1>
-			{typeof window !== "undefined" && window.innerWidth < 768
+			{typeof window !== 'undefined' &&
+			window.innerWidth < 768
 				? blogView === 1 && (
 						<Carousel
 							title='Самые последние'
@@ -116,7 +117,8 @@ const Blogs = () => {
 							)}
 						</div>
 				  )}
-			{typeof window !== "undefined" && window.innerWidth < 768
+			{typeof window !== 'undefined' &&
+			window.innerWidth < 768
 				? blogView === 2 && (
 						<Carousel
 							title='Самые последние'
@@ -171,7 +173,8 @@ const Blogs = () => {
 							)}
 						</div>
 				  )}
-			{typeof window !== "undefined" && window.innerWidth < 768
+			{typeof window !== 'undefined' &&
+			window.innerWidth < 768
 				? blogView === 3 && (
 						<Carousel
 							title='Самые последние'
@@ -226,7 +229,8 @@ const Blogs = () => {
 							)}
 						</div>
 				  )}
-			{typeof window !== "undefined" && window.innerWidth < 768
+			{typeof window !== 'undefined' &&
+			window.innerWidth < 768
 				? blogView === 4 && (
 						<Carousel
 							title='Самые последние'

@@ -1,13 +1,12 @@
-import Carousel from '@/components/common/Carousel';
-import FormCard from '@/components/common/FormCard';
-import Consultation from '@/components/common/FormCard';
-import FourCard from '@/components/common/FourCard';
-import FourCards from '@/components/common/FourCards';
-import FourCards2 from '@/components/common/FourCards2';
-import Hero from '@/components/common/Hero';
-import FeedbackCard from '@/components/home/FeedbackCard';
-import MasterCard from '@/components/home/MasterCard';
-import WorkOrServiceCard from '@/components/home/WorkOrServiceCard';
+import Carousel from '@/app/components/common/Carousel';
+import FormCard from '@/app/components/common/FormCard';
+import FourCard from '@/app/components/common/FourCard';
+import FourCards from '@/app/components/common/FourCards';
+import FourCards2 from '@/app/components/common/FourCards2';
+import Hero from '@/app/components/common/Hero';
+import FeedbackCard from '@/app/components/home/FeedbackCard';
+import MasterCard from '@/app/components/home/MasterCard';
+import WorkOrServiceCard from '@/app/components/home/WorkOrServiceCard';
 import {
 	advantages,
 	brands,
@@ -15,12 +14,61 @@ import {
 	masters,
 	works,
 } from '@/data';
+import { MainPageData } from '@/types';
+import {
+	Metadata,
+	ResolvingMetadata,
+} from 'next';
 import Image from 'next/image';
 
-export default function Home() {
+async function getMainPageData(
+	lang: string
+): Promise<MainPageData> {
+	const res = await fetch(
+		`http://mepebag547.temp.swtest.ru/api/V1/page/main?lang=${lang}`
+	);
+
+	if (!res.ok) {
+		throw new Error(
+			'Failed to fetch main page data'
+		);
+	}
+
+	return res.json();
+}
+
+export async function generateMetadata(
+	{ params }: { params: { lang: string } },
+	parent: ResolvingMetadata
+): Promise<Metadata> {
+	const mainPageData = await getMainPageData(
+		params.lang
+	);
+
+	const title = mainPageData.meta_title;
+	const description =
+		mainPageData.meta_description;
+	const keywords = mainPageData.meta_keywords;
+
+	return {
+		title,
+		description,
+		keywords,
+	};
+}
+
+export default async function MainPage({
+	params: { lang },
+}: {
+	params: { lang: string };
+}) {
+	const mainPageData = await getMainPageData(
+		lang
+	);
+
 	return (
 		<main className='md:space-y-20 space-y-14'>
-			<Hero imgSrc='/bg/hero-home-bg.svg'>
+			<Hero imgSrc={mainPageData.banner.image}>
 				<FormCard
 					title='Экспертный ремонт  бытовой  техники в Алмате на дому'
 					body='Закажите бесплатную консультацию за несколько минут.
