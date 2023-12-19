@@ -1,11 +1,3 @@
-export interface Feedback {
-	id: number;
-	title: string;
-	body: string;
-	name: string;
-	date: string;
-}
-
 export interface Master {
 	id: number;
 	name: string;
@@ -61,6 +53,34 @@ export interface Service {
 	phone: string;
 }
 
+export interface Review {
+	id: number;
+	blog_id: number;
+	name: string;
+	description: string;
+	date: string;
+}
+
+export interface About {
+	id: number;
+	image: string;
+	title: string;
+	description: string;
+}
+
+export interface Certificate {
+	id: number;
+	image: string;
+	alt: string;
+}
+
+export interface Fact {
+	id: number;
+	number: number;
+	image: string;
+	alt: string;
+}
+
 export interface MainPageData {
 	id: number;
 	menu_id: number;
@@ -74,4 +94,20 @@ export interface MainPageData {
 	marks: Mark[];
 	why_we: WhyWe[];
 	services: Service[];
+	reviews: Review[]
+}
+
+export interface AboutPageData {
+	id: number;
+	menu_id: number;
+	title: string;
+	description: string;
+	meta_title: string;
+	meta_description: string;
+	meta_keywords: string;
+	slug: string
+	banner: Banner
+	about: About[];
+	certificates: Certificate[];
+	facts: Fact[];
 }

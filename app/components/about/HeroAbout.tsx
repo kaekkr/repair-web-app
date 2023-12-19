@@ -1,6 +1,14 @@
 import Image from 'next/image';
 
-const HeroAbout = () => {
+interface HeroAboutProps {
+	imgSrc: string;
+	alt: string;
+}
+
+const HeroAbout = ({
+	imgSrc,
+	alt,
+}: HeroAboutProps) => {
 	return (
 		<div className='md:h-screen md:space-y-0 mt-10 flex flex-col items-center relative space-y-14'>
 			<Image

@@ -6,7 +6,7 @@ interface FormProps {
 
 const Form = ({ selectOptions }: FormProps) => {
 	return (
-		<form className='grid grid-cols-2 grid-rows-3 gap-5'>
+		<form className='md:gap-5 grid grid-cols-2 grid-rows-3 gap-2'>
 			<select
 				name=''
 				id=''
@@ -35,12 +35,12 @@ const Form = ({ selectOptions }: FormProps) => {
 			<input
 				type='text'
 				placeholder='Сотовый номер'
-				className='md:text-base text-xs bg-[#F7F7F7] border-0 rounded-lg py-1 px-2 indent-10 bg-[15px] bg-no-repeat bg-[url("/icons/phone-icon.svg")] bg-[length:20px_20px] focus:outline-none focus:outline-yellow-500'
+				className='md:indent-10 indent-7 bg-[15px] bg-no-repeat bg-[url("/icons/phone-icon.svg")] bg-[length:20px_20px]'
 			/>
 			<input
 				type='text'
 				placeholder='Полное имя'
-				className='md:text-base text-xs bg-[#F7F7F7] border-0 rounded-lg col-span-2 py-1 px-2 indent-10 bg-[15px] bg-no-repeat bg-[url("/icons/people-icon.svg")] bg-[length:20px_20px] focus:outline-none focus:outline-yellow-500'
+				className='rounded-lg col-span-2 indent-10 bg-[15px] bg-no-repeat bg-[url("/icons/people-icon.svg")] bg-[length:20px_20px]'
 			/>
 			<button className='button col-span-2 py-2 md:py-0'>
 				Отправить

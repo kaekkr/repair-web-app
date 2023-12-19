@@ -43,9 +43,9 @@ const HamburgerMenu = () => {
 				></span>
 			</button>
 			<div
-				className={`${
-					isHamburgerOpen && 'animate-fade-down'
-				}`}
+				className={`animate-fade ${
+					isHamburgerOpen ? 'appear' : 'disappear'
+				} w-1/2 fixed inset-0 z-50 bg-yellow-500 flex items-center justify-center`}
 			>
 				<LinksAlternate />
 			</div>

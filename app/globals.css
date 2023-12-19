@@ -14,6 +14,10 @@ p {
 	@apply text-xs;
 }
 
+input {
+  @apply md:text-base bg-[#F7F7F7] text-xs border-0 rounded-lg py-1 px-2 focus:outline-none focus:outline-yellow-500
+}
+
 .button {
 	@apply bg-[#FFB627] text-white rounded-lg;
 }
@@ -21,3 +25,18 @@ p {
 .active-page {
 	@apply text-yellow-500 underline;
 }
+
+.animate-fade {
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate-fade.appear {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-fade.disappear {
+  opacity: 0;
+  transform: translateX(-14rem); 
+}
+

@@ -1,7 +1,6 @@
 import {
 	Advantage,
 	Brand,
-	Feedback,
 	Master,
 	Work,
 } from '@/types';
@@ -9,14 +8,14 @@ import {
 export const advantages: Advantage[] = [
 	{
 		id: 1,
-		title: 'Бесплатное диагностика',
+		title: 'Бесплатная диагностика',
 		body: 'Наши мастера обладают высокой квалификацией и опытом в области ремонта бытовой техники.',
 		imgSrc: '/icons/diagnostic-icon.svg',
 		type: 1,
 	},
 	{
 		id: 2,
-		title: 'Профи мастеры',
+		title: 'Профи мастера',
 		body: 'Наши мастера обладают высокой квалификацией и опытом в области ремонта бытовой техники.',
 		imgSrc: '/icons/people-icon-2-white.svg',
 		type: 2,
@@ -68,7 +67,7 @@ export const brands: Brand[] = [
 	},
 ];
 
-export const feedbacks: Feedback[] = [
+export const feedbacks = [
 	{
 		id: 1,
 		title: 'Xорошо',
@@ -301,7 +300,7 @@ export const certificates = [
 	},
 ];
 
-export const interestingFacts = [
+export const Fact = [
 	{
 		id: 1,
 		title: '650',

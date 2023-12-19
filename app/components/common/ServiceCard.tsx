@@ -1,14 +1,14 @@
-interface WorkOrServiceCardProps {
+interface ServiceCardProps {
 	id: number;
 	title: string;
 	body: string;
 }
 
-const WorkOrServiceCard = ({
+const ServiceCard = ({
 	id,
 	title,
 	body,
-}: WorkOrServiceCardProps) => {
+}: ServiceCardProps) => {
 	return (
 		<div className='md:py-10 md:px-7 md:space-y-10 space-y-5 py-7 px-4 bg-white rounded-xl max-w-[18rem]'>
 			<div className='md:max-h-24 flex space-x-3 max-h-12'>
@@ -36,4 +36,4 @@ const WorkOrServiceCard = ({
 	);
 };
 
-export default WorkOrServiceCard;
+export default ServiceCard;

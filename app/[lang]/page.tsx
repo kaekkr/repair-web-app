@@ -1,12 +1,11 @@
 import Carousel from '@/app/components/common/Carousel';
+import FeedbackCard from '@/app/components/common/FeedbackCard';
 import FormCard from '@/app/components/common/FormCard';
 import FourCard from '@/app/components/common/FourCard';
 import FourCards from '@/app/components/common/FourCards';
 import FourCards2 from '@/app/components/common/FourCards2';
 import Hero from '@/app/components/common/Hero';
-import FeedbackCard from '@/app/components/home/FeedbackCard';
-import MasterCard from '@/app/components/home/MasterCard';
-import WorkOrServiceCard from '@/app/components/home/WorkOrServiceCard';
+import MasterCard from '@/app/components/common/MasterCard';
 import {
 	advantages,
 	brands,
@@ -20,12 +19,14 @@ import {
 	ResolvingMetadata,
 } from 'next';
 import Image from 'next/image';
+import ServiceCard from '../components/common/ServiceCard';
 
 async function getMainPageData(
 	lang: string
 ): Promise<MainPageData> {
 	const res = await fetch(
-		`http://mepebag547.temp.swtest.ru/api/V1/page/main?lang=${lang}`
+		`http://mepebag547.temp.swtest.ru/api/V1/page/main?lang=${lang}`,
+		{ next: { revalidate: 1 } }
 	);
 
 	if (!res.ok) {
@@ -38,17 +39,20 @@ async function getMainPageData(
 }
 
 export async function generateMetadata(
-	{ params }: { params: { lang: string } },
+	{
+		params: { lang },
+	}: { params: { lang: string } },
 	parent: ResolvingMetadata
 ): Promise<Metadata> {
-	const mainPageData = await getMainPageData(
-		params.lang
-	);
+	const {
+		meta_title: metaTitle,
+		meta_description: metaDescription,
+		meta_keywords: metaKeywords,
+	} = await getMainPageData(lang);
 
-	const title = mainPageData.meta_title;
-	const description =
-		mainPageData.meta_description;
-	const keywords = mainPageData.meta_keywords;
+	const title = metaTitle;
+	const description = metaDescription;
+	const keywords = metaKeywords;
 
 	return {
 		title,
@@ -62,13 +66,30 @@ export default async function MainPage({
 }: {
 	params: { lang: string };
 }) {
-	const mainPageData = await getMainPageData(
-		lang
-	);
+	const {
+		banner,
+		why_we: whyWeS,
+		marks,
+		reviews,
+		services,
+	} = await getMainPageData(lang);
 
 	return (
 		<main className='md:space-y-20 space-y-14'>
-			<Hero imgSrc={mainPageData.banner.image}>
+			{/* <Hero imgSrc={banner.image}>
+				<FormCard
+					title='Экспертный ремонт  бытовой  техники в Алмате на дому'
+					body='Закажите бесплатную консультацию за несколько минут.
+Позвоните по 87022224141 или же напишите нам по ватсапу'
+					selectOptions={[
+						'Выберите технику',
+						'1',
+						'2',
+						'3',
+					]}
+				/>
+			</Hero> */}
+			<Hero imgSrc='/bg/hero-home-bg.svg'>
 				<FormCard
 					title='Экспертный ремонт  бытовой  техники в Алмате на дому'
 					body='Закажите бесплатную консультацию за несколько минут.
@@ -85,13 +106,13 @@ export default async function MainPage({
 				title='Почему вы должны выбрать нас ?'
 				style={{ marginTop: '20rem' }}
 			>
-				{advantages.map(advantage => (
+				{whyWeS.map((whyWe, i) => (
 					<FourCard
-						key={advantage.id}
-						title={advantage.title}
-						body={advantage.body}
-						imgSrc={advantage.imgSrc}
-						type={advantage.type}
+						key={whyWe.id}
+						title={whyWe.title}
+						body={whyWe.description}
+						imgSrc={whyWe.image}
+						type={i}
 					/>
 				))}
 			</FourCards>
@@ -99,15 +120,15 @@ export default async function MainPage({
 				title='Ремонт всех марок и моделей'
 				type='brand'
 			>
-				{brands.map(brand => {
+				{marks.map(mark => {
 					return (
 						<div
 							className='md:flex-[0_0_20%] relative flex-[0_0_50%]'
-							key={brand.id}
+							key={mark.id}
 						>
 							<Image
-								src={brand.imgSrc}
-								alt={brand.imgSrc}
+								src={mark.image}
+								alt={mark.alt}
 								width={300}
 								height={300}
 							/>
@@ -119,23 +140,23 @@ export default async function MainPage({
 				title='Что думают наши клиенты?'
 				type=''
 			>
-				{feedbacks.map(feedback => (
+				{reviews.map(review => (
 					<FeedbackCard
-						key={feedback.id}
-						title={feedback.title}
-						body={feedback.body}
-						name={feedback.name}
-						date={feedback.date}
+						key={review.id}
+						title='Test'
+						body={review.description}
+						name={review.name}
+						date={review.date}
 					/>
 				))}
 			</Carousel>
 			<FourCards2 title='Как мы работаем'>
-				{works.map(work => (
-					<WorkOrServiceCard
-						key={work.id}
-						id={work.id}
-						title={work.title}
-						body={work.body}
+				{services.map(service => (
+					<ServiceCard
+						key={service.id}
+						id={service.id}
+						title={service.title}
+						body={service.description}
 					/>
 				))}
 			</FourCards2>

@@ -1,7 +1,7 @@
 import KeepWithUs from '@/app/components/blog/KeepWithUs';
 import SimilarArticles from '@/app/components/blog/SimilarArticles';
 import Carousel from '@/app/components/common/Carousel';
-import FeedbackCard from '@/app/components/home/FeedbackCard';
+import FeedbackCard from '@/app/components/common/FeedbackCard';
 import {
 	feedbacks,
 	washingMachinesBlogs,
@@ -17,8 +17,7 @@ const AriclePage = ({
 		washingMachinesBlogs.find(
 			washingMachinesBlog => {
 				return (
-					washingMachinesBlog.id ===
-					parseInt(id)
+					washingMachinesBlog.id === parseInt(id)
 				);
 			}
 		)!;

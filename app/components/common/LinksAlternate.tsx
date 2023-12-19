@@ -7,7 +7,7 @@ const LinksAlternate = () => {
 	const pathname = usePathname();
 
 	return (
-		<ul className='text-center'>
+		<ul className='text-center text-white font-bold space-y-5 text-2xl'>
 			<li className=''>
 				<Link
 					href='/'

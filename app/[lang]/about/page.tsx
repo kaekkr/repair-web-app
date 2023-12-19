@@ -1,35 +1,79 @@
+import FactCard from '@/app/components/about/FactCard';
 import HeroAbout from '@/app/components/about/HeroAbout';
-import InterestingFactsCard from '@/app/components/about/InterestingFactsCard';
 import Carousel from '@/app/components/common/Carousel';
 import FourCard from '@/app/components/common/FourCard';
 import FourCards from '@/app/components/common/FourCards';
+import { AboutPageData } from '@/types';
 import {
-	certificates,
-	interestingFacts,
-	moreAboutCompany,
-} from '@/data';
+	Metadata,
+	ResolvingMetadata,
+} from 'next';
 import Image from 'next/image';
 
-const AboutPage = ({
+async function getAboutPageData(
+	lang: string
+): Promise<AboutPageData> {
+	const res = await fetch(
+		`http://mepebag547.temp.swtest.ru/api/V1/page/about?lang=${lang}`
+	);
+
+	if (!res.ok) {
+		throw new Error(
+			'Failed to fetch about page data'
+		);
+	}
+
+	return res.json();
+}
+
+export async function generateMetadata(
+	{
+		params: { lang },
+	}: { params: { lang: string } },
+	parent: ResolvingMetadata
+): Promise<Metadata> {
+	const {
+		meta_title: metaTitle,
+		meta_description: metaDescription,
+		meta_keywords: metaKeywords,
+	} = await getAboutPageData(lang);
+
+	const title = metaTitle;
+	const description = metaDescription;
+	const keywords = metaKeywords;
+
+	return {
+		title,
+		description,
+		keywords,
+	};
+}
+
+const AboutPage = async ({
 	params: { lang },
 }: {
 	params: { lang: string };
 }) => {
+	const {
+		banner,
+		about: aboutS,
+		certificates,
+		facts,
+	} = await getAboutPageData(lang);
+
 	return (
 		<main className='md:space-y-20 space-y-14'>
 			<HeroAbout />
 			<FourCards title='Больше про нашу компанию'>
-				{moreAboutCompany.map(
-					moreAboutCompany => (
-						<FourCard
-							key={moreAboutCompany.id}
-							title={moreAboutCompany.title}
-							body={moreAboutCompany.body}
-							imgSrc={moreAboutCompany.imgSrc}
-							type={moreAboutCompany.type}
-						/>
-					)
-				)}
+				{aboutS.map((about, i) => (
+					<FourCard
+						key={about.id}
+						title={about.title}
+						body={about.description}
+						imgSrc={about.image}
+						type={i}
+					/>
+				))}
 			</FourCards>
 			<Carousel
 				title='Сертификации и Лицензии'
@@ -42,8 +86,8 @@ const AboutPage = ({
 						key={certificate.id}
 					>
 						<Image
-							src={certificate.imgSrc}
-							alt={certificate.imgSrc}
+							src={certificate.image}
+							alt={certificate.alt}
 							width={400}
 							height={400}
 						/>
@@ -54,12 +98,15 @@ const AboutPage = ({
 				title='Интересные факты'
 				body='Работаем с 2022 года'
 			>
-				{interestingFacts.map(interestingFact => (
-					<InterestingFactsCard
-						key={interestingFact.id}
-						title={interestingFact.title}
-						body={interestingFact.body}
-						imgSrc={interestingFact.imgSrc}
+				{facts.map(fact => (
+					<FactCard
+						key={fact.id}
+						// title={interestingFact.title}
+						title='Test'
+						// body={interestingFact.description}
+						body='Test'
+						imgSrc={fact.image}
+						alt={fact.alt}
 					/>
 				))}
 			</FourCards>
