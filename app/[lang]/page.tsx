@@ -6,6 +6,7 @@ import FourCards2 from '@/app/components/common/FourCards2';
 import Hero from '@/app/components/common/Hero';
 import MasterCard from '@/app/components/common/MasterCard';
 import FeedbackCard from '@/app/components/common/ReviewCard';
+import { brands } from '@/data';
 import { MainPageData } from '@/types';
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -16,8 +17,7 @@ async function getMainPageData(
 	lang: string
 ): Promise<MainPageData> {
 	const res = await fetch(
-		`http://mepebag547.temp.swtest.ru/api/V1/page/main?lang=${lang}`,
-		{ next: { revalidate: 1 } }
+		`http://mepebag547.temp.swtest.ru/api/V1/page/main?lang=${lang}`
 	);
 
 	if (!res.ok) {
@@ -70,11 +70,21 @@ export default async function MainPage({
 		inputs,
 		selectOptions,
 		mainPage,
+		markTitle,
 	} = await getDictionary(lang);
 
 	return (
 		<main className='md:space-y-20 space-y-14'>
-			<Hero imgSrc={banner.image}>
+			{/* <Hero imgSrc={banner.image}>
+				<FormCard
+					title={form.title}
+					body={form.description}
+					selectOptions={selectOptions}
+					buttonTitle={buttons.buttonTitle1}
+					inputs={inputs}
+				/>
+			</Hero> */}
+			<Hero imgSrc='/bg/hero-home-bg.svg'>
 				<FormCard
 					title={form.title}
 					body={form.description}
@@ -97,11 +107,8 @@ export default async function MainPage({
 					/>
 				))}
 			</FourCards>
-			<Carousel
-				title={mainPage.markTitle}
-				type='brand'
-			>
-				{marks.map(mark => {
+			<Carousel title={markTitle} type='brand'>
+				{/* {marks.map(mark => {
 					return (
 						<div
 							className='md:flex-[0_0_20%] relative flex-[0_0_50%]'
@@ -110,6 +117,21 @@ export default async function MainPage({
 							<Image
 								src={mark.image}
 								alt={mark.alt}
+								width={300}
+								height={300}
+							/>
+						</div>
+					);
+				})} */}
+				{brands.map(brand => {
+					return (
+						<div
+							className='md:flex-[0_0_20%] relative flex-[0_0_50%]'
+							key={brand.id}
+						>
+							<Image
+								src={brand.imgSrc}
+								alt={brand.imgSrc}
 								width={300}
 								height={300}
 							/>

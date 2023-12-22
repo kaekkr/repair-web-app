@@ -150,3 +150,19 @@ export type MastersPageData = {
 	banner: Banner;
 	masters: Master[];
 }
+
+export type ServicesPageData = {
+	id: number;
+	menu_id: number;
+	title: string;
+	description: string;
+	meta_title: string;
+	meta_description: string;
+	meta_keywords: string;
+	slug: string;
+	banner: Banner;
+	services: Service[];
+	tags: Tag[];
+	description_services: [];
+	marks: Mark[];
+}

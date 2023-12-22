@@ -8,7 +8,20 @@ import { useState } from 'react';
 import Carousel from '../common/Carousel';
 import ServiceDescriptionCard from './ServiceDescriptionCard';
 
-const ServicesDescription = () => {
+type ServicesDescriptionProps = {
+	title: string;
+	buttons: {
+		buttonTitle1: string;
+		buttonTitle2: string;
+		buttonTitle3: string;
+		buttonTitle4: string;
+	};
+};
+
+const ServicesDescription = ({
+	title,
+	buttons,
+}: ServicesDescriptionProps) => {
 	const [serviceView, setServiceView] =
 		useState(1);
 
@@ -19,7 +32,7 @@ const ServicesDescription = () => {
 	return (
 		<div className='space-y-10 flex flex-col md:items-center'>
 			<h1 className='md:text-center font-bold'>
-				Описание услуг
+				{title}
 			</h1>
 			{typeof window !== 'undefined' &&
 			window.innerWidth < 768 ? (
@@ -32,7 +45,7 @@ const ServicesDescription = () => {
 								: 'text-[#6E6E6E]'
 						} py-2 md:px-5 px-3 text-left`}
 					>
-						Стиральные машины
+						{buttons.buttonTitle1}
 					</button>
 					<button
 						onClick={() => changeServiceView(2)}
@@ -42,7 +55,7 @@ const ServicesDescription = () => {
 								: 'text-[#6E6E6E]'
 						} py-2 md:px-5 px-3 text-left`}
 					>
-						Посудомоечные машины
+						{buttons.buttonTitle2}
 					</button>
 					<button
 						onClick={() => changeServiceView(3)}
@@ -52,7 +65,7 @@ const ServicesDescription = () => {
 								: 'text-[#6E6E6E]'
 						} py-2 md:px-5 px-3 text-left`}
 					>
-						Холодильники
+						{buttons.buttonTitle3}
 					</button>
 					<button
 						onClick={() => changeServiceView(4)}
@@ -62,7 +75,7 @@ const ServicesDescription = () => {
 								: 'text-[#6E6E6E]'
 						} py-2 md:px-5 px-3 text-left`}
 					>
-						Кондиционеры
+						{buttons.buttonTitle4}
 					</button>
 				</Carousel>
 			) : (
@@ -75,7 +88,7 @@ const ServicesDescription = () => {
 								: 'text-[#6E6E6E]'
 						} py-2 px-5`}
 					>
-						Стиральные машины
+						{buttons.buttonTitle1}
 					</button>
 					<button
 						onClick={() => changeServiceView(2)}
@@ -85,7 +98,7 @@ const ServicesDescription = () => {
 								: 'text-[#6E6E6E]'
 						} py-2 px-5`}
 					>
-						Посудомоечные машины
+						{buttons.buttonTitle2}
 					</button>
 					<button
 						onClick={() => changeServiceView(3)}
@@ -95,7 +108,7 @@ const ServicesDescription = () => {
 								: 'text-[#6E6E6E]'
 						} py-2 px-5`}
 					>
-						Холодильники
+						{buttons.buttonTitle3}
 					</button>
 					<button
 						onClick={() => changeServiceView(4)}
@@ -105,7 +118,7 @@ const ServicesDescription = () => {
 								: 'text-[#6E6E6E]'
 						} py-2 px-5`}
 					>
-						Кондиционеры
+						{buttons.buttonTitle4}
 					</button>
 				</div>
 			)}

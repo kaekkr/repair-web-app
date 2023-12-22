@@ -16,13 +16,27 @@
 		"title": "Expert repair of household appliances in Almaty at home",
 		"description": "Book a free consultation in a few minutes. Call us at 87022224141 or text us on watsap"
 	},
+	"markTitle": "Repair of all makes and models",
 	"mainPage": {
 		"whyWeTitle": "Why should you choose us?",
-		"markTitle": "Repair of all makes and models",
 		"reviewTitle": "What do our customers think?",
 		"serviceTitle": "How we work",
 		"masterTitle": "Our masters"
 	},
 	"contactTitle": "Our contacts",
-	"footerTitle": "If you have any questions, call / email us"
+	"footerTitle": "If you have any questions, call / email us",
+	"servicesPage": {
+		"heroTitle": "Welcome to the world of reliable appliance repair !",
+		"heroDescription": "Our story began when a group of talented professionals decided to combine their knowledge and experience to create a unique company.",
+		"serviceTitle": "Our services",
+		"serviceDescription": {
+			"title": "Description of services",
+			"buttons": {
+				"buttonTitle1": "Washing machines",
+				"buttonTitle2": "Dishwashers",
+				"buttonTitle3": "Refrigerators",
+				"buttonTitle4": "Air Conditioners"
+			}
+		}
+	}
 }
