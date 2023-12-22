@@ -1,4 +1,4 @@
-interface FourCards2Props {
+type FourCards2Props = {
 	title: string;
 	children: React.ReactNode;
 }

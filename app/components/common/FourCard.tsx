@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-interface FourCardProps {
+type FourCardProps = {
 	title: string;
 	body: string;
 	imgSrc: string;

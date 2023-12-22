@@ -1,0 +1,28 @@
+{
+	"buttons": {
+		"buttonTitle1": "KZ",
+		"buttonTitle2": "KZ"
+	},
+	"inputs": {
+		"inputTitle1": "KZ",
+		"inputTitle2": "KZ"
+	},
+	"selectOptions": {
+		"selectOptionTitle1": "KZ",
+    "selectOptionTitle2": "KZ",
+    "selectOptionTitle3": "KZ"
+	},
+	"form": {
+		"title": "KZ",
+		"description": "KZ"
+	},
+	"mainPage": {
+		"whyWeTitle": "KZ",
+		"markTitle": "KZ",
+		"reviewTitle": "KZ",
+		"serviceTitle": "KZ",
+		"masterTitle": "KZ"
+	},
+	"contactTitle": "KZ",
+	"footerTitle": "KZ"
+}

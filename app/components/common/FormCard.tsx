@@ -1,31 +1,42 @@
 import Form from './Form';
 
-interface FormCardProps {
+type FormCardProps = {
 	title: string;
 	body: string;
-	selectOptions: string[];
-}
+	selectOptions: {
+		selectOptionTitle1: string;
+		selectOptionTitle2: string;
+		selectOptionTitle3: string;
+	};
+	buttonTitle: string;
+	inputs: {
+		inputTitle1: string;
+		inputTitle2: string;
+	};
+};
 
 const FormCard = ({
 	title,
 	body,
 	selectOptions,
+	buttonTitle,
+	inputs,
 }: FormCardProps) => {
 	return (
 		<div className='md:px-5 md:space-y-6 md:py-2 max-w-lg bg-white space-y-4'>
 			<h1 className='font-bold max-w-md text-xl'>
 				{title}
 			</h1>
-			<h3 className='text-sm'>
-				{/* Закажите бесплатную консультацию за
-				несколько минут. Позвоните по{' '}
-				<span className='text-yellow-500'>
-					87022224141
-				</span>{' '}
-				или же напишите нам по ватсапу */}
-				{body}
-			</h3>
-			<Form selectOptions={selectOptions} />
+			<h3 className='text-sm'>{body}</h3>
+			<Form
+				selectOptions={[
+					`${selectOptions.selectOptionTitle1}`,
+					`${selectOptions.selectOptionTitle2}`,
+					`${selectOptions.selectOptionTitle3}`,
+				]}
+				buttonTitle={buttonTitle}
+				inputs={inputs}
+			/>
 		</div>
 	);
 };

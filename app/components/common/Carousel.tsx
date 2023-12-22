@@ -9,13 +9,13 @@ import {
 	useState,
 } from 'react';
 
-interface CarouselProps {
+type CarouselProps = {
 	children: React.ReactNode[];
 	title?: string;
 	body?: string;
 	type: string;
 	style?: object;
-}
+};
 
 const Carousel = ({
 	children,

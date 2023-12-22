@@ -1,0 +1,28 @@
+{
+	"buttons": {
+		"buttonTitle1": "Позвонить",
+		"buttonTitle2": "Написать"
+	},
+	"inputs": {
+		"inputTitle1": "Сотовый номер",
+		"inputTitle2": "Полное имя"
+	},
+	"selectOptions": {
+		"selectOptionTitle1": "Выберите технику",
+		"selectOptionTitle2": "1",
+		"selectOptionTitle3": "2"
+	},
+	"form": {
+		"title": "Экспертный ремонт  бытовой  техники в Алмате на дому",
+		"description": "Закажите бесплатную консультацию за несколько минут. Позвоните по 87022224141 или же напишите нам по ватсапу"
+	},
+	"mainPage": {
+		"whyWeTitle": "Почему вы должны выбрать нас ?",
+		"markTitle": "Ремонт всех марок и моделей",
+		"reviewTitle": "Что думают наши клиенты?",
+		"serviceTitle": "Как мы работаем",
+		"masterTitle": "Наши мастера"
+	},
+	"contactTitle": "Наши контакты",
+	"footerTitle": "Если у вас есть вопросы, позвоните / напишите нам"
+}

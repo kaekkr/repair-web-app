@@ -2,13 +2,15 @@ import Carousel from '@/app/components/common/Carousel';
 import FormCard from '@/app/components/common/FormCard';
 import Hero from '@/app/components/common/Hero';
 import MasterCard from '@/app/components/common/MasterCard';
-import { masters } from '@/data';
+import { MastersPageData } from '@/types';
 import {
 	Metadata,
 	ResolvingMetadata,
 } from 'next';
 
-async function getMastersPageData(lang: string) {
+async function getMastersPageData(
+	lang: string
+): Promise<MastersPageData> {
 	const res = await fetch(
 		`http://mepebag547.temp.swtest.ru/api/V1/page/master?lang=${lang}`
 	);
@@ -45,16 +47,17 @@ export async function generateMetadata(
 	};
 }
 
-const MastersPage = ({
+const MastersPage = async ({
 	params: { lang },
 }: {
 	params: { lang: string };
 }) => {
-	// const { banner } = getMastersPageData(lang);
+	const { banner, masters } =
+		await getMastersPageData(lang);
 
 	return (
 		<main className='space-y-20'>
-			<Hero imgSrc='/bg/hero-masters-bg.svg'>
+			<Hero imgSrc={banner.image}>
 				<FormCard
 					title='Присоединяйтесь к Нам: Мастера бытового ремонта'
 					body='Добро пожаловать в наше сообщество мастеров, где профессионализм встречается с возможностью роста! Если вы являетесь опытным специалистом в области бытового ремонта и стремитесь к новым вызовам, то мы хотим видеть вас в нашей команде. Заполните эту форму заявки, мы с вами свяжемся в течении недели.'
@@ -66,18 +69,6 @@ const MastersPage = ({
 					]}
 				/>
 			</Hero>
-			{/* <Hero imgSrc={banner.image}>
-				<FormCard
-					title='Присоединяйтесь к Нам: Мастера бытового ремонта'
-					body='Добро пожаловать в наше сообщество мастеров, где профессионализм встречается с возможностью роста! Если вы являетесь опытным специалистом в области бытового ремонта и стремитесь к новым вызовам, то мы хотим видеть вас в нашей команде. Заполните эту форму заявки, мы с вами свяжемся в течении недели.'
-					selectOptions={[
-						'Позиция',
-						'1',
-						'2',
-						'3',
-					]}
-				/>
-			</Hero> */}
 			<Carousel
 				title='Наши мастера'
 				type=''
@@ -86,11 +77,11 @@ const MastersPage = ({
 				{masters.map(master => (
 					<MasterCard
 						key={master.id}
-						body={master.body}
+						tags={master.tags}
 						name={master.name}
-						location={master.location}
+						location={master.distance}
 						experience={master.experience}
-						imgSrc={master.imgSrc}
+						imgSrc={master.image}
 					/>
 				))}
 			</Carousel>

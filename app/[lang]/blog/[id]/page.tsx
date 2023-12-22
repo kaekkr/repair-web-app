@@ -1,7 +1,7 @@
 import KeepWithUs from '@/app/components/blog/KeepWithUs';
 import SimilarArticles from '@/app/components/blog/SimilarArticles';
 import Carousel from '@/app/components/common/Carousel';
-import FeedbackCard from '@/app/components/common/FeedbackCard';
+import FeedbackCard from '@/app/components/common/ReviewCard';
 import {
 	feedbacks,
 	washingMachinesBlogs,

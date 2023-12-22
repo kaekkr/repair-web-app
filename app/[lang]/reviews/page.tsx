@@ -1,12 +1,11 @@
 import Carousel from '@/app/components/common/Carousel';
-import FeedbackCard from '@/app/components/common/FeedbackCard';
-import { feedbacks } from '@/data';
-import {
-	Metadata,
-	ResolvingMetadata,
-} from 'next';
+import FeedbackCard from '@/app/components/common/ReviewCard';
+import { ReviewsPageData } from '@/types';
+import { Metadata } from 'next';
 
-async function getReviewsPageData(lang: string) {
+async function getReviewsPageData(
+	lang: string
+): Promise<ReviewsPageData> {
 	const res = await fetch(
 		`http://mepebag547.temp.swtest.ru/api/V1/page/review?lang=${lang}`
 	);
@@ -20,12 +19,11 @@ async function getReviewsPageData(lang: string) {
 	return res.json();
 }
 
-export async function generateMetadata(
-	{
-		params: { lang },
-	}: { params: { lang: string } },
-	parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+	params: { lang },
+}: {
+	params: { lang: string };
+}): Promise<Metadata> {
 	const {
 		meta_title: metaTitle,
 		meta_description: metaDescription,
@@ -43,12 +41,14 @@ export async function generateMetadata(
 	};
 }
 
-const ReviewsPage = ({
+const ReviewsPage = async ({
 	params: { lang },
 }: {
 	params: { lang: string };
 }) => {
-	// const { reviews } = getReviewsPageData(lang);
+	const { reviews } = await getReviewsPageData(
+		lang
+	);
 
 	return (
 		<main>
@@ -56,24 +56,15 @@ const ReviewsPage = ({
 				title='Что думают наши клиенты?'
 				type=''
 			>
-				{feedbacks.map(feedback => (
-					<FeedbackCard
-						key={feedback.id}
-						title={feedback.title}
-						body={feedback.body}
-						name={feedback.name}
-						date={feedback.date}
-					/>
-				))}
-				{/* {reviews.map(review => (
+				{reviews.map(review => (
 					<FeedbackCard
 						key={review.id}
-						title={review.title}
-						body={review.body}
+						title='Test'
+						body={review.description}
 						name={review.name}
 						date={review.date}
 					/>
-				))} */}
+				))}
 			</Carousel>
 		</main>
 	);

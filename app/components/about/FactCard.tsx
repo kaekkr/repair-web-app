@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-interface FactCardProps {
+type FactCardProps = {
 	title: string;
 	body: string;
 	imgSrc: string;

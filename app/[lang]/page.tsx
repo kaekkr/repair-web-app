@@ -1,25 +1,16 @@
 import Carousel from '@/app/components/common/Carousel';
-import FeedbackCard from '@/app/components/common/FeedbackCard';
 import FormCard from '@/app/components/common/FormCard';
 import FourCard from '@/app/components/common/FourCard';
 import FourCards from '@/app/components/common/FourCards';
 import FourCards2 from '@/app/components/common/FourCards2';
 import Hero from '@/app/components/common/Hero';
 import MasterCard from '@/app/components/common/MasterCard';
-import {
-	advantages,
-	brands,
-	feedbacks,
-	masters,
-	works,
-} from '@/data';
+import FeedbackCard from '@/app/components/common/ReviewCard';
 import { MainPageData } from '@/types';
-import {
-	Metadata,
-	ResolvingMetadata,
-} from 'next';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import ServiceCard from '../components/common/ServiceCard';
+import { getDictionary } from './dictionaries';
 
 async function getMainPageData(
 	lang: string
@@ -38,12 +29,11 @@ async function getMainPageData(
 	return res.json();
 }
 
-export async function generateMetadata(
-	{
-		params: { lang },
-	}: { params: { lang: string } },
-	parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+	params: { lang },
+}: {
+	params: { lang: string };
+}): Promise<Metadata> {
 	const {
 		meta_title: metaTitle,
 		meta_description: metaDescription,
@@ -72,38 +62,29 @@ export default async function MainPage({
 		marks,
 		reviews,
 		services,
+		masters,
 	} = await getMainPageData(lang);
+	const {
+		form,
+		buttons,
+		inputs,
+		selectOptions,
+		mainPage,
+	} = await getDictionary(lang);
 
 	return (
 		<main className='md:space-y-20 space-y-14'>
-			{/* <Hero imgSrc={banner.image}>
+			<Hero imgSrc={banner.image}>
 				<FormCard
-					title='Экспертный ремонт  бытовой  техники в Алмате на дому'
-					body='Закажите бесплатную консультацию за несколько минут.
-Позвоните по 87022224141 или же напишите нам по ватсапу'
-					selectOptions={[
-						'Выберите технику',
-						'1',
-						'2',
-						'3',
-					]}
-				/>
-			</Hero> */}
-			<Hero imgSrc='/bg/hero-home-bg.svg'>
-				<FormCard
-					title='Экспертный ремонт  бытовой  техники в Алмате на дому'
-					body='Закажите бесплатную консультацию за несколько минут.
-Позвоните по 87022224141 или же напишите нам по ватсапу'
-					selectOptions={[
-						'Выберите технику',
-						'1',
-						'2',
-						'3',
-					]}
+					title={form.title}
+					body={form.description}
+					selectOptions={selectOptions}
+					buttonTitle={buttons.buttonTitle1}
+					inputs={inputs}
 				/>
 			</Hero>
 			<FourCards
-				title='Почему вы должны выбрать нас ?'
+				title={mainPage.whyWeTitle}
 				style={{ marginTop: '20rem' }}
 			>
 				{whyWeS.map((whyWe, i) => (
@@ -117,7 +98,7 @@ export default async function MainPage({
 				))}
 			</FourCards>
 			<Carousel
-				title='Ремонт всех марок и моделей'
+				title={mainPage.markTitle}
 				type='brand'
 			>
 				{marks.map(mark => {
@@ -137,7 +118,7 @@ export default async function MainPage({
 				})}
 			</Carousel>
 			<Carousel
-				title='Что думают наши клиенты?'
+				title={mainPage.reviewTitle}
 				type=''
 			>
 				{reviews.map(review => (
@@ -150,26 +131,30 @@ export default async function MainPage({
 					/>
 				))}
 			</Carousel>
-			<FourCards2 title='Как мы работаем'>
-				{services.map(service => (
+			<FourCards2 title={mainPage.serviceTitle}>
+				{services.map((service, i) => (
 					<ServiceCard
 						key={service.id}
-						id={service.id}
 						title={service.title}
 						body={service.description}
+						type={i + 1}
+						buttons={buttons}
 					/>
 				))}
 			</FourCards2>
 			<div className='mt-40'>
-				<Carousel title='Наши мастера' type=''>
+				<Carousel
+					title={mainPage.masterTitle}
+					type=''
+				>
 					{masters.map(master => (
 						<MasterCard
 							key={master.id}
-							body={master.body}
+							tags={master.tags}
 							name={master.name}
-							location={master.location}
+							location={master.distance}
 							experience={master.experience}
-							imgSrc={master.imgSrc}
+							imgSrc={master.image}
 						/>
 					))}
 				</Carousel>

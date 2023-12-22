@@ -1,87 +1,99 @@
-export interface Master {
+export type Tag = {
 	id: number;
-	name: string;
-	body: string;
-	location: string;
-	experience: string;
-	imgSrc: string;
-}
+	title: string;
+};
 
-export interface Advantage {
+export type Master = {
+	id: number;
+	image: string;
+	name: string;
+	reviews: number;
+	distance: string;
+	experience: string;
+	tags: Tag[];
+};
+
+export type Advantage = {
 	id: number;
 	title: string;
 	body: string;
 	imgSrc: string;
 	type: number;
-}
+};
 
-export interface Brand {
+export type Brand = {
 	id: number;
 	imgSrc: string;
-}
+};
 
-export interface Work {
+export type Work = {
 	id: number;
 	title: string;
 	body: string;
-}
+};
 
-export interface Banner {
+export type LinkT = {
+	id: number;
+	title: string;
+	slug: string;
+};
+
+export type Banner = {
 	id: number;
 	image: string;
 	title: string;
 	description: string;
-}
+};
 
-export interface Mark {
+export type Mark = {
 	id: number;
 	image: string;
 	alt: string;
-}
+};
 
-export interface WhyWe {
+export type WhyWe = {
 	id: number;
 	image: string;
 	title: string;
 	description: string;
-}
+};
 
-export interface Service {
+export type Service = {
 	id: number;
 	title: string;
 	description: string;
 	phone: string;
-}
+};
 
-export interface Review {
+export type Review = {
 	id: number;
 	blog_id: number;
 	name: string;
 	description: string;
 	date: string;
-}
+};
 
-export interface About {
+export type About = {
 	id: number;
 	image: string;
 	title: string;
 	description: string;
-}
+};
 
-export interface Certificate {
+export type Certificate = {
 	id: number;
 	image: string;
 	alt: string;
-}
+};
 
-export interface Fact {
+export type Fact = {
 	id: number;
 	number: number;
 	image: string;
 	alt: string;
-}
+};
 
-export interface MainPageData {
+export type MainPageData = {
 	id: number;
 	menu_id: number;
 	title: string;
@@ -89,15 +101,16 @@ export interface MainPageData {
 	meta_title: string;
 	meta_description: string;
 	meta_keywords: string;
-	slug: string
-	banner: Banner
+	slug: string;
+	banner: Banner;
 	marks: Mark[];
 	why_we: WhyWe[];
 	services: Service[];
-	reviews: Review[]
-}
+	reviews: Review[];
+	masters: Master[];
+};
 
-export interface AboutPageData {
+export type AboutPageData = {
 	id: number;
 	menu_id: number;
 	title: string;
@@ -105,9 +118,35 @@ export interface AboutPageData {
 	meta_title: string;
 	meta_description: string;
 	meta_keywords: string;
-	slug: string
-	banner: Banner
+	slug: string;
+	banner: Banner;
 	about: About[];
 	certificates: Certificate[];
 	facts: Fact[];
+};
+
+export type ReviewsPageData = {
+	id: number;
+	menu_id: number;
+	title: string;
+	description: string;
+	meta_title: string;
+	meta_description: string;
+	meta_keywords: string;
+	slug: string;
+	banner: Banner;
+	reviews: Review[];
+};
+
+export type MastersPageData = {
+	id: number;
+	menu_id: number;
+	title: string;
+	description: string;
+	meta_title: string;
+	meta_description: string;
+	meta_keywords: string;
+	slug: string;
+	banner: Banner;
+	masters: Master[];
 }

@@ -1,4 +1,4 @@
-interface ServiceDescriptionCardProps {
+type ServiceDescriptionCardProps = {
 	title: string;
 	price: string;
 }

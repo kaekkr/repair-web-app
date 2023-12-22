@@ -2,8 +2,13 @@
 
 import { useState } from 'react';
 import LinksAlternate from './LinksAlternate';
+import { LinkT } from '@/types';
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({
+	links,
+}: {
+	links: LinkT[];
+}) => {
 	const [isHamburgerOpen, setHamburgerOpen] =
 		useState(false);
 
@@ -47,7 +52,7 @@ const HamburgerMenu = () => {
 					isHamburgerOpen ? 'appear' : 'disappear'
 				} w-1/2 fixed inset-0 z-50 bg-yellow-500 flex items-center justify-center`}
 			>
-				<LinksAlternate />
+				<LinksAlternate links={links} />
 			</div>
 		</div>
 	);

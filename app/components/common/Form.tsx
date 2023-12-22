@@ -1,12 +1,26 @@
 'use client';
 
-interface FormProps {
-	selectOptions: string[];
-}
+import { handleFormSubmit } from '../../api/handleFormSubmit';
 
-const Form = ({ selectOptions }: FormProps) => {
+type FormProps = {
+	selectOptions: string[];
+	buttonTitle: string;
+	inputs: {
+		inputTitle1: string;
+		inputTitle2: string;
+	};
+};
+
+const Form = ({
+	selectOptions,
+	buttonTitle,
+	inputs,
+}: FormProps) => {
 	return (
-		<form className='md:gap-5 grid grid-cols-2 grid-rows-3 gap-2'>
+		<form
+			action={handleFormSubmit}
+			className='md:gap-5 grid grid-cols-2 grid-rows-3 gap-2'
+		>
 			<select
 				name=''
 				id=''
@@ -33,17 +47,22 @@ const Form = ({ selectOptions }: FormProps) => {
 				})}
 			</select>
 			<input
+				name='phone'
 				type='text'
-				placeholder='Сотовый номер'
+				placeholder={inputs.inputTitle1}
 				className='md:indent-10 indent-7 bg-[15px] bg-no-repeat bg-[url("/icons/phone-icon.svg")] bg-[length:20px_20px]'
 			/>
 			<input
+				name='name'
 				type='text'
-				placeholder='Полное имя'
+				placeholder={inputs.inputTitle2}
 				className='rounded-lg col-span-2 indent-10 bg-[15px] bg-no-repeat bg-[url("/icons/people-icon.svg")] bg-[length:20px_20px]'
 			/>
-			<button className='button col-span-2 py-2 md:py-0'>
-				Отправить
+			<button
+				className='button col-span-2 py-2 md:py-0'
+				type='submit'
+			>
+				{buttonTitle}
 			</button>
 		</form>
 	);

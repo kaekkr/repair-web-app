@@ -1,25 +1,20 @@
 'use client';
 
+import { LinkT } from '@/types';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-interface Link {
-	id: number;
-	title: string;
-	slug: string;
-}
-
-const Links = ({ links }: { links: Link[] }) => {
+const Links = ({ links }: { links: LinkT[] }) => {
 	const pathname = usePathname();
 
 	return (
-		<ul className='hidden md:flex space-x-10'>
+		<ul className='md:flex hidden space-x-10'>
 			{links.map(link => (
 				<li key={link.id}>
 					<Link
-						href='/'
+						href={link.slug}
 						className={
-							pathname === '/'
+							pathname === link.slug
 								? 'active-page'
 								: ''
 						}

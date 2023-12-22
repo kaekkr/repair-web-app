@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-interface HeroProps {
+type HeroProps = {
 	imgSrc: string;
 	children: React.ReactNode;
 }

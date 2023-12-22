@@ -1,8 +1,9 @@
+import { Tag } from '@/types';
 import Image from 'next/image';
 
-interface MasterCardProps {
+type MasterCardProps = {
 	name: string;
-	body: string;
+	tags: Tag[];
 	location: string;
 	experience: string;
 	imgSrc: string;
@@ -10,7 +11,7 @@ interface MasterCardProps {
 
 const MasterCard = ({
 	name,
-	body,
+	tags,
 	location,
 	experience,
 	imgSrc,
@@ -51,7 +52,11 @@ const MasterCard = ({
 				</div>
 			</div>
 			<hr className='border-black' />
-			<p className='md:w-[60%] w-3/4 px-7'>{body}</p>
+			<div className='md:w-[60%] w-3/4 px-7'>
+				{tags.map((tag, i) => (
+					<p key={i}>{tag.title}</p>
+				))}
+			</div>
 		</div>
 	);
 };

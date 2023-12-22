@@ -5,6 +5,16 @@ import { match } from '@formatjs/intl-localematcher';
 const locales = ['ru', 'kz', 'en'];
 
 function getLocale(request: NextRequest): string {
+	const queryLocale =
+		request.nextUrl.searchParams.get('lang');
+
+	if (
+		queryLocale &&
+		locales.includes(queryLocale)
+	) {
+		return queryLocale;
+	}
+
 	const headers = {
 		'accept-language': request.headers.get(
 			'accept-language'
