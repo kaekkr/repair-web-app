@@ -29,183 +29,96 @@ const ServicesDescription = ({
 		setServiceView(type);
 	};
 
+	const renderServiceView = (services: any[]) => {
+		return (
+			<div className='md:grid-cols-4 grid grid-rows-2 grid-cols-2 gap-4'>
+				{services
+					.slice(
+						0,
+						typeof window !== 'undefined' &&
+							window.innerWidth >= 768
+							? 8
+							: 4
+					)
+					.map(service => (
+						<ServiceDescriptionCard
+							key={service.id}
+							title={service.title}
+							price={service.price}
+						/>
+					))}
+			</div>
+		);
+	};
+
+	const renderButtonView = () => {
+		return (
+			<div className='flex space-x-14'>
+				{Object.values(buttons).map(
+					(buttonTitle, index) => (
+						<button
+							key={index}
+							onClick={() =>
+								changeServiceView(index + 1)
+							}
+							className={`${
+								serviceView === index + 1
+									? 'button'
+									: 'text-[#6E6E6E]'
+							} py-2 px-5`}
+						>
+							{buttonTitle}
+						</button>
+					)
+				)}
+			</div>
+		);
+	};
+
+	const renderMobileButtonView = () => {
+		return (
+			<Carousel type='button'>
+				{Object.values(buttons).map(
+					(buttonTitle, index) => (
+						<button
+							key={index}
+							onClick={() =>
+								changeServiceView(index + 1)
+							}
+							className={`${
+								serviceView === index + 1
+									? 'button'
+									: 'text-[#6E6E6E]'
+							} md:text-lg md:px-5 md:flex-[0_0_30%] flex-[0_0_50%] py-2 px-5 text-left`}
+						>
+							{buttonTitle}
+						</button>
+					)
+				)}
+			</Carousel>
+		);
+	};
+
 	return (
 		<div className='space-y-10 flex flex-col md:items-center'>
 			<h1 className='md:text-center font-bold'>
 				{title}
 			</h1>
-			{typeof window !== 'undefined' &&
-			window.innerWidth < 768 ? (
-				<Carousel type='button'>
-					<button
-						onClick={() => changeServiceView(1)}
-						className={`${
-							serviceView === 1
-								? 'button'
-								: 'text-[#6E6E6E]'
-						} py-2 md:px-5 px-3 text-left`}
-					>
-						{buttons.buttonTitle1}
-					</button>
-					<button
-						onClick={() => changeServiceView(2)}
-						className={`${
-							serviceView === 2
-								? 'button'
-								: 'text-[#6E6E6E]'
-						} py-2 md:px-5 px-3 text-left`}
-					>
-						{buttons.buttonTitle2}
-					</button>
-					<button
-						onClick={() => changeServiceView(3)}
-						className={`${
-							serviceView === 3
-								? 'button'
-								: 'text-[#6E6E6E]'
-						} py-2 md:px-5 px-3 text-left`}
-					>
-						{buttons.buttonTitle3}
-					</button>
-					<button
-						onClick={() => changeServiceView(4)}
-						className={`${
-							serviceView === 4
-								? 'button'
-								: 'text-[#6E6E6E]'
-						} py-2 md:px-5 px-3 text-left`}
-					>
-						{buttons.buttonTitle4}
-					</button>
-				</Carousel>
-			) : (
-				<div className='flex space-x-14'>
-					<button
-						onClick={() => changeServiceView(1)}
-						className={`${
-							serviceView === 1
-								? 'button'
-								: 'text-[#6E6E6E]'
-						} py-2 px-5`}
-					>
-						{buttons.buttonTitle1}
-					</button>
-					<button
-						onClick={() => changeServiceView(2)}
-						className={`${
-							serviceView === 2
-								? 'button'
-								: 'text-[#6E6E6E]'
-						} py-2 px-5`}
-					>
-						{buttons.buttonTitle2}
-					</button>
-					<button
-						onClick={() => changeServiceView(3)}
-						className={`${
-							serviceView === 3
-								? 'button'
-								: 'text-[#6E6E6E]'
-						} py-2 px-5`}
-					>
-						{buttons.buttonTitle3}
-					</button>
-					<button
-						onClick={() => changeServiceView(4)}
-						className={`${
-							serviceView === 4
-								? 'button'
-								: 'text-[#6E6E6E]'
-						} py-2 px-5`}
-					>
-						{buttons.buttonTitle4}
-					</button>
-				</div>
-			)}
-			{serviceView === 1 && (
-				<div className='md:grid-cols-4 grid grid-rows-2 grid-cols-2 gap-4'>
-					{washingMachinesServices
-						.slice(
-							0,
-							typeof window !== 'undefined' &&
-								window.innerWidth >= 768
-								? 8
-								: 4
-						)
-						.map(washingMachinesService => (
-							<ServiceDescriptionCard
-								key={washingMachinesService.id}
-								title={
-									washingMachinesService.title
-								}
-								price={
-									washingMachinesService.price
-								}
-							/>
-						))}
-				</div>
-			)}
-			{serviceView === 2 && (
-				<div className='md:grid-cols-4 grid grid-rows-2 grid-cols-2 gap-4'>
-					{dishwashersServices
-						.slice(
-							0,
-							typeof window !== 'undefined' &&
-								window.innerWidth >= 768
-								? 8
-								: 4
-						)
-						.map(dishwashersService => (
-							<ServiceDescriptionCard
-								key={dishwashersService.id}
-								title={dishwashersService.title}
-								price={dishwashersService.price}
-							/>
-						))}
-				</div>
-			)}
-			{serviceView === 3 && (
-				<div className='md:grid-cols-4 grid grid-rows-2 grid-cols-2 gap-4'>
-					{washingMachinesServices
-						.slice(
-							0,
-							typeof window !== 'undefined' &&
-								window.innerWidth >= 768
-								? 8
-								: 4
-						)
-						.map(washingMachinesService => (
-							<ServiceDescriptionCard
-								key={washingMachinesService.id}
-								title={
-									washingMachinesService.title
-								}
-								price={
-									washingMachinesService.price
-								}
-							/>
-						))}
-				</div>
-			)}
-			{serviceView === 4 && (
-				<div className='md:grid-cols-4 grid grid-rows-2 grid-cols-2 gap-4'>
-					{dishwashersServices
-						.slice(
-							0,
-							typeof window !== 'undefined' &&
-								window.innerWidth >= 768
-								? 8
-								: 4
-						)
-						.map(dishwashersService => (
-							<ServiceDescriptionCard
-								key={dishwashersService.id}
-								title={dishwashersService.title}
-								price={dishwashersService.price}
-							/>
-						))}
-				</div>
-			)}
+			{window?.innerWidth < 768
+				? renderMobileButtonView()
+				: renderButtonView()}
+			{serviceView === 1 &&
+				renderServiceView(
+					washingMachinesServices
+				)}
+			{serviceView === 2 &&
+				renderServiceView(dishwashersServices)}
+			{serviceView === 3 &&
+				renderServiceView(
+					washingMachinesServices
+				)}
+			{serviceView === 4 &&
+				renderServiceView(dishwashersServices)}
 		</div>
 	);
 };

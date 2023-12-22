@@ -5,13 +5,13 @@ import FourCards from '@/app/components/common/FourCards';
 import FourCards2 from '@/app/components/common/FourCards2';
 import Hero from '@/app/components/common/Hero';
 import MasterCard from '@/app/components/common/MasterCard';
-import FeedbackCard from '@/app/components/common/ReviewCard';
 import { brands } from '@/data';
 import { MainPageData } from '@/types';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import ServiceCard from '../components/common/ServiceCard';
 import { getDictionary } from './dictionaries';
+import ReviewCard from '@/app/components/common/ReviewCard';
 
 async function getMainPageData(
 	lang: string
@@ -65,12 +65,12 @@ export default async function MainPage({
 		masters,
 	} = await getMainPageData(lang);
 	const {
-		form,
 		buttons,
 		inputs,
-		selectOptions,
 		mainPage,
 		markTitle,
+		reviewsTitle,
+		mastersTitle
 	} = await getDictionary(lang);
 
 	return (
@@ -86,11 +86,11 @@ export default async function MainPage({
 			</Hero> */}
 			<Hero imgSrc='/bg/hero-home-bg.svg'>
 				<FormCard
-					title={form.title}
-					body={form.description}
-					selectOptions={selectOptions}
+					title={mainPage.form.title}
+					body={mainPage.form.description}
+					selectOptions={mainPage.selectOptions}
 					buttonTitle={buttons.buttonTitle1}
-					inputs={inputs}
+					inputsText={inputs}
 				/>
 			</Hero>
 			<FourCards
@@ -140,11 +140,11 @@ export default async function MainPage({
 				})}
 			</Carousel>
 			<Carousel
-				title={mainPage.reviewTitle}
+				title={reviewsTitle}
 				type=''
 			>
 				{reviews.map(review => (
-					<FeedbackCard
+					<ReviewCard
 						key={review.id}
 						title='Test'
 						body={review.description}
@@ -166,7 +166,7 @@ export default async function MainPage({
 			</FourCards2>
 			<div className='mt-40'>
 				<Carousel
-					title={mainPage.masterTitle}
+					title={mastersTitle}
 					type=''
 				>
 					{masters.map(master => (

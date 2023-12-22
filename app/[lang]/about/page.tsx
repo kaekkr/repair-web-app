@@ -9,6 +9,7 @@ import {
 	ResolvingMetadata,
 } from 'next';
 import Image from 'next/image';
+import { getDictionary } from '../dictionaries';
 
 async function getAboutPageData(
 	lang: string
@@ -26,12 +27,11 @@ async function getAboutPageData(
 	return res.json();
 }
 
-export async function generateMetadata(
-	{
-		params: { lang },
-	}: { params: { lang: string } },
-	parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+	params: { lang },
+}: {
+	params: { lang: string };
+}): Promise<Metadata> {
 	const {
 		meta_title: metaTitle,
 		meta_description: metaDescription,
@@ -61,10 +61,20 @@ const AboutPage = async ({
 		facts,
 	} = await getAboutPageData(lang);
 
+	const {
+		heroTitle,
+		heroDescription,
+		aboutPage,
+	} = await getDictionary(lang);
+
 	return (
 		<main className='md:space-y-20 space-y-14'>
-			<HeroAbout />
-			<FourCards title='Больше про нашу компанию'>
+			<HeroAbout
+				imgSrc={banner.image}
+				title={heroTitle}
+				description={heroDescription}
+			/>
+			<FourCards title={aboutPage.aboutTitle}>
 				{aboutS.map((about, i) => (
 					<FourCard
 						key={about.id}
@@ -76,8 +86,8 @@ const AboutPage = async ({
 				))}
 			</FourCards>
 			<Carousel
-				title='Сертификации и Лицензии'
-				body='Наша компания обладает всеми необходимыми сертификациями и лицензиями, гарантируя, что вы сотрудничаете с надежным и профессиональным сервисным центром.'
+				title={aboutPage.certificateTitle}
+				body={aboutPage.certificateDescription}
 				type=''
 			>
 				{certificates.map(certificate => (
@@ -95,8 +105,8 @@ const AboutPage = async ({
 				))}
 			</Carousel>
 			<FourCards
-				title='Интересные факты'
-				body='Работаем с 2022 года'
+				title={aboutPage.factTitle}
+				body={aboutPage.factDescription}
 			>
 				{facts.map(fact => (
 					<FactCard

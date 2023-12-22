@@ -8,7 +8,7 @@ type BlogCardProps = {
 	type: string;
 	imgSrc: string;
 	date: string;
-}
+};
 
 const BlogCard = ({
 	id,
@@ -26,12 +26,21 @@ const BlogCard = ({
 			className='md:h-auto md:space-y-5 md:max-w-[18rem] px-3 py-5 bg-white rounded-2xl flex flex-col justify-between flex-[0_0_70%] h-72 cursor-pointer'
 		>
 			<div className='space-y-4'>
-				<Image
-					src={imgSrc}
-					alt={imgSrc}
-					width={1920}
-					height={1080}
-				/>
+				{window?.innerWidth < 768 ? (
+					<Image
+						src={imgSrc}
+						alt={imgSrc}
+						width={100}
+						height={100}
+					/>
+				) : (
+					<Image
+						src={imgSrc}
+						alt={imgSrc}
+						width={1920}
+						height={1080}
+					/>
+				)}
 				<div className='flex items-center space-x-1'>
 					<div className='bg-yellow-500 rounded-full w-2 h-2'></div>
 					<h3 className='text-yellow-500 text-sm'>

@@ -54,16 +54,16 @@ const ServicesPage = async ({
 }) => {
 	const { banner, services } =
 		await getServicesPageData(lang);
-	const { buttons, servicesPage, markTitle } =
+	const { buttons, servicesPage, markTitle, heroTitle, heroDescription } =
 		await getDictionary(lang);
 
 	return (
 		<main className='space-y-20'>
 			<HeroServices
 				imgSrc={banner.image}
-				heroTitle={servicesPage.heroTitle}
-				heroDescription={
-					servicesPage.heroDescription
+				title={heroTitle}
+				description={
+					heroDescription
 				}
 			/>
 			<FourCards2

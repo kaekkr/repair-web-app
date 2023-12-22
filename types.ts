@@ -149,7 +149,7 @@ export type MastersPageData = {
 	slug: string;
 	banner: Banner;
 	masters: Master[];
-}
+};
 
 export type ServicesPageData = {
 	id: number;
@@ -165,4 +165,33 @@ export type ServicesPageData = {
 	tags: Tag[];
 	description_services: [];
 	marks: Mark[];
-}
+};
+
+export type Blog = {
+	id: number;
+	tag_id: number;
+	tag: string;
+	image: string;
+	title: string;
+	description: string;
+	meta_title: string;
+	meta_description: string;
+	meta_keywords: string;
+	slug: string;
+	read: number;
+	date: string;
+};
+
+export type BlogPageData = {
+	id: number;
+	menu_id: number;
+	title: string;
+	description: string;
+	meta_title: string;
+	meta_description: string;
+	meta_keywords: string;
+	slug: string;
+	banner: Banner;
+	tags: Tag[];
+	blogs: Blog[];
+};

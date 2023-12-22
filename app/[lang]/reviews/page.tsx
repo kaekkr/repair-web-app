@@ -2,6 +2,7 @@ import Carousel from '@/app/components/common/Carousel';
 import FeedbackCard from '@/app/components/common/ReviewCard';
 import { ReviewsPageData } from '@/types';
 import { Metadata } from 'next';
+import { getDictionary } from '../dictionaries';
 
 async function getReviewsPageData(
 	lang: string
@@ -50,10 +51,14 @@ const ReviewsPage = async ({
 		lang
 	);
 
+	const { reviewTitle } = await getDictionary(
+		lang
+	);
+
 	return (
 		<main>
 			<Carousel
-				title='Что думают наши клиенты?'
+				title={reviewTitle}
 				type=''
 			>
 				{reviews.map(review => (

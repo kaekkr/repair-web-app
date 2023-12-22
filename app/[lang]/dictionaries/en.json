@@ -7,27 +7,27 @@
 		"inputTitle1": "Phone number",
 		"inputTitle2": "Full name"
 	},
-	"selectOptions": {
-		"selectOptionTitle1": "Choose tech",
-		"selectOptionTitle2": "1",
-		"selectOptionTitle3": "2"
-	},
-	"form": {
-		"title": "Expert repair of household appliances in Almaty at home",
-		"description": "Book a free consultation in a few minutes. Call us at 87022224141 or text us on watsap"
-	},
+	"reviewsTitle": "What do our customers think?",
 	"markTitle": "Repair of all makes and models",
+	"mastersTitle": "Our masters",
 	"mainPage": {
 		"whyWeTitle": "Why should you choose us?",
-		"reviewTitle": "What do our customers think?",
 		"serviceTitle": "How we work",
-		"masterTitle": "Our masters"
+		"selectOptions": {
+			"selectOptionTitle1": "Choose tech",
+			"selectOptionTitle2": "1",
+			"selectOptionTitle3": "2"
+		},
+		"form": {
+			"title": "Expert repair of household appliances in Almaty at home",
+			"description": "Book a free consultation in a few minutes. Call us at 87022224141 or text us on watsap"
+		}
 	},
 	"contactTitle": "Our contacts",
 	"footerTitle": "If you have any questions, call / email us",
+	"heroTitle": "Welcome to the world of reliable appliance repair !",
+	"heroDescription": "Our story began when a group of talented professionals decided to combine their knowledge and experience to create a unique company.",
 	"servicesPage": {
-		"heroTitle": "Welcome to the world of reliable appliance repair !",
-		"heroDescription": "Our story began when a group of talented professionals decided to combine their knowledge and experience to create a unique company.",
 		"serviceTitle": "Our services",
 		"serviceDescription": {
 			"title": "Description of services",
@@ -38,5 +38,33 @@
 				"buttonTitle4": "Air Conditioners"
 			}
 		}
+	},
+	"aboutPage": {
+		"aboutTitle": "More about our company",
+		"certificateTitle": "Certifications and Licenses",
+		"certificateDescription": "Our company has all the necessary certifications and licenses, ensuring that you are working with a reliable and professional service center.",
+		"factTitle": "Interesting facts",
+		"factDescription": "We've been working since 2022"
+	},
+	"mastersPage": {
+		"selectOptions": {
+			"selectOptionTitle1": "Position",
+			"selectOptionTitle2": "1",
+			"selectOptionTitle3": "2"
+		},
+		"form": {
+			"title": "Join Us: Masters of household repairs",
+			"description": "Welcome to our handyman community where professionalism meets growth opportunity! If you are an experienced home repair professional with a passion for new challenges, we want you on our team. Fill out this application form, we will contact you within a week."
+		}
+	},
+	"blogPage": {
+		"heroTitle": "Useful Tips for Repair and Maintenance of Techniques",
+		"buttons": {
+			"buttonTitle1": "Washing Machine Repair",
+			"buttonTitle2": "Refrigerator Service",
+			"buttonTitle3": "News and Trends in the World of Home Appliances",
+			"buttonTitle4": "Energy saving tips"
+		},
+		"blogsTitle": "The most recent"
 	}
 }

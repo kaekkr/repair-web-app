@@ -37,6 +37,6 @@ input {
 
 .animate-fade.disappear {
   opacity: 0;
-  transform: translateX(-14rem); 
+  transform: translateX(-20rem); 
 }
 

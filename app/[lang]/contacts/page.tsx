@@ -1,11 +1,7 @@
 import React from 'react';
 
-const ContactsPage = ({
-	params: { lang },
-}: {
-	params: { lang: string };
-}) => {
-	return <main></main>;
+const ContactsPage = () => {
+	return <></>;
 };
 
 export default ContactsPage;

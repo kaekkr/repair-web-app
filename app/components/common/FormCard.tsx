@@ -9,7 +9,7 @@ type FormCardProps = {
 		selectOptionTitle3: string;
 	};
 	buttonTitle: string;
-	inputs: {
+	inputsText: {
 		inputTitle1: string;
 		inputTitle2: string;
 	};
@@ -20,7 +20,7 @@ const FormCard = ({
 	body,
 	selectOptions,
 	buttonTitle,
-	inputs,
+	inputsText,
 }: FormCardProps) => {
 	return (
 		<div className='md:px-5 md:space-y-6 md:py-2 max-w-lg bg-white space-y-4'>
@@ -35,7 +35,7 @@ const FormCard = ({
 					`${selectOptions.selectOptionTitle3}`,
 				]}
 				buttonTitle={buttonTitle}
-				inputs={inputs}
+				inputs={inputsText}
 			/>
 		</div>
 	);
