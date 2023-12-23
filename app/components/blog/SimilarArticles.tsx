@@ -5,7 +5,7 @@ const SimilarArticles = () => {
 	return (
 		<div className='space-y-7'>
 			<h1 className='font-bold'>
-				Похожее статьи
+				Похожие статьи
 			</h1>
 			<div className='space-y-5'>
 				{washingMachinesBlogs

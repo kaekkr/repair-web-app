@@ -182,7 +182,7 @@ export type Blog = {
 	date: string;
 };
 
-export type BlogPageData = {
+export type BlogsPageData = {
 	id: number;
 	menu_id: number;
 	title: string;
@@ -194,4 +194,36 @@ export type BlogPageData = {
 	banner: Banner;
 	tags: Tag[];
 	blogs: Blog[];
+};
+
+export type SimilarArticle = {
+	id: number;
+	tag_id: number;
+	tag: string;
+	image: string;
+	title: string;
+	description: string;
+	meta_title: string;
+	meta_description: string;
+	meta_keywords: string;
+	slug: string;
+	read: number;
+	date: string;
+};
+
+export type ArticlePageData = {
+	id: number;
+	tag_id: number;
+	tag: string;
+	image: string;
+	title: string;
+	description: string;
+	meta_title: string;
+	meta_description: string;
+	meta_keywords: string;
+	slug: string;
+	read: number;
+	date: string;
+	similar: SimilarArticle[];
+	reviews: Review[];
 };
