@@ -5,7 +5,6 @@ import MasterCard from '@/app/components/common/MasterCard';
 import { MastersPageData } from '@/types';
 import {
 	Metadata,
-	ResolvingMetadata,
 } from 'next';
 import { getDictionary } from '../dictionaries';
 
@@ -25,12 +24,11 @@ async function getMastersPageData(
 	return res.json();
 }
 
-export async function generateMetadata(
-	{
-		params: { lang },
-	}: { params: { lang: string } },
-	parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+	params: { lang },
+}: {
+	params: { lang: string };
+}): Promise<Metadata> {
 	const {
 		meta_title: metaTitle,
 		meta_description: metaDescription,
@@ -56,26 +54,22 @@ const MastersPage = async ({
 	const { banner, masters } =
 		await getMastersPageData(lang);
 
-	const { buttons, inputs, mastersPage, mastersTitle } = await getDictionary(
-		lang
-	);
+	const {
+		buttons,
+		inputs,
+		mastersPage,
+		mastersTitle,
+	} = await getDictionary(lang);
 
 	return (
 		<main className='space-y-20'>
-			{/* <Hero imgSrc={banner.image}>
+			<Hero imgSrc={banner.image}>
 				<FormCard
 					title={mastersPage.form.title}
 					body={mastersPage.form.description}
-					selectOptions={mastersPage.selectOptions}
-					buttonTitle={buttons.buttonTitle1}
-					inputsText={inputs}
-				/>
-			</Hero> */}
-			<Hero imgSrc="/bg/hero-masters-bg.svg">
-				<FormCard 
-					title={mastersPage.form.title}
-					body={mastersPage.form.description}
-					selectOptions={mastersPage.selectOptions}
+					selectOptions={
+						mastersPage.selectOptions
+					}
 					buttonTitle={buttons.buttonTitle1}
 					inputsText={inputs}
 				/>

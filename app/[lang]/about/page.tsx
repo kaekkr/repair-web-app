@@ -6,7 +6,6 @@ import FourCards from '@/app/components/common/FourCards';
 import { AboutPageData } from '@/types';
 import {
 	Metadata,
-	ResolvingMetadata,
 } from 'next';
 import Image from 'next/image';
 import { getDictionary } from '../dictionaries';

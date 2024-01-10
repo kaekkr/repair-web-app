@@ -3,7 +3,6 @@ import FourCards2 from '@/app/components/common/FourCards2';
 import ServiceCard from '@/app/components/common/ServiceCard';
 import HeroServices from '@/app/components/services/HeroServices';
 import ServicesDescription from '@/app/components/services/ServicesDescription';
-import { brands } from '@/data';
 import { ServicesPageData } from '@/types';
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -52,7 +51,7 @@ const ServicesPage = async ({
 }: {
 	params: { lang: string };
 }) => {
-	const { banner, services } =
+	const { banner, marks, services, description_services: descriptionServices } =
 		await getServicesPageData(lang);
 	const { buttons, servicesPage, markTitle, heroTitle, heroDescription } =
 		await getDictionary(lang);
@@ -85,9 +84,10 @@ const ServicesPage = async ({
 					servicesPage.serviceDescription.title
 				}
 				buttons={servicesPage.serviceDescription.buttons}
+				descriptionServices={descriptionServices}
 			/>
 			<Carousel title={markTitle} type='brand'>
-				{/* {marks.map(mark => {
+				{marks.map(mark => {
 					return (
 						<div
 							className='md:flex-[0_0_20%] relative flex-[0_0_50%]'
@@ -96,21 +96,6 @@ const ServicesPage = async ({
 							<Image
 								src={mark.image}
 								alt={mark.alt}
-								width={300}
-								height={300}
-							/>
-						</div>
-					);
-				})} */}
-				{brands.map(brand => {
-					return (
-						<div
-							className='md:flex-[0_0_20%] relative flex-[0_0_50%]'
-							key={brand.id}
-						>
-							<Image
-								src={brand.imgSrc}
-								alt={brand.imgSrc}
 								width={300}
 								height={300}
 							/>

@@ -42,14 +42,8 @@ const Navbar = async ({
 
 	return (
 		<nav className='md:bg-[#F3F3F3] md:p-0 bg-white rounded-2xl py-5 px-6 mb-10 space-y-5 flex justify-between items-center'>
-			{/* <Image
-				src={logo}
-				alt='logo'
-				width={48}
-				height={48}
-			/> */}
 			<Image
-				src='/logo.svg'
+				src={logo}
 				alt='logo'
 				width={48}
 				height={48}

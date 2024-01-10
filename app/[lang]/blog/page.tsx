@@ -53,12 +53,8 @@ const BlogPage = async ({
 
 	return (
 		<main className='space-y-20'>
-			{/* <HeroBlog
-				imgSrc={banner.image}
-				title={blogPage.heroTitle}
-			/> */}
 			<HeroBlog
-				imgSrc='/bg/hero-blog-bg.svg'
+				imgSrc={banner.image}
 				title={blogPage.heroTitle}
 			/>
 			<Blogs

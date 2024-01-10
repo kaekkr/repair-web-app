@@ -1,9 +1,5 @@
 'use client';
 
-import {
-	dishwashersServices,
-	washingMachinesServices,
-} from '@/data';
 import { useState } from 'react';
 import Carousel from '../common/Carousel';
 import ServiceDescriptionCard from './ServiceDescriptionCard';
@@ -16,11 +12,13 @@ type ServicesDescriptionProps = {
 		buttonTitle3: string;
 		buttonTitle4: string;
 	};
+	descriptionServices: [];
 };
 
 const ServicesDescription = ({
 	title,
 	buttons,
+	descriptionServices
 }: ServicesDescriptionProps) => {
 	const [serviceView, setServiceView] =
 		useState(1);
@@ -109,16 +107,16 @@ const ServicesDescription = ({
 				: renderButtonView()}
 			{serviceView === 1 &&
 				renderServiceView(
-					washingMachinesServices
+					descriptionServices
 				)}
 			{serviceView === 2 &&
-				renderServiceView(dishwashersServices)}
+				renderServiceView(descriptionServices)}
 			{serviceView === 3 &&
 				renderServiceView(
-					washingMachinesServices
+					descriptionServices
 				)}
 			{serviceView === 4 &&
-				renderServiceView(dishwashersServices)}
+				renderServiceView(descriptionServices)}
 		</div>
 	);
 };

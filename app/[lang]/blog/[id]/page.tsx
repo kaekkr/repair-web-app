@@ -3,10 +3,6 @@ import ShareWithFriends from '@/app/components/blog/ShareWithFriends';
 import SimilarArticles from '@/app/components/blog/SimilarArticles';
 import Carousel from '@/app/components/common/Carousel';
 import FeedbackCard from '@/app/components/common/ReviewCard';
-import {
-	feedbacks,
-	washingMachinesBlogs,
-} from '@/data';
 import { ArticlePageData } from '@/types';
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -118,16 +114,7 @@ const AriclePage = async ({
 			<div className='space-y-7'>
 				<h1 className='font-bold'>Комментарии</h1>
 				<Carousel type=''>
-					{feedbacks.map(feedback => (
-						<FeedbackCard
-							key={feedback.id}
-							title={feedback.title}
-							body={feedback.body}
-							name={feedback.name}
-							date={feedback.date}
-						/>
-					))}
-					{/* {reviews.map(review => (
+					{reviews.map(review => (
 					<FeedbackCard
 						key={review.id}
 						title='Test'
@@ -135,7 +122,7 @@ const AriclePage = async ({
 						name={review.name}
 						date={review.date}
 					/>
-				))} */}
+				))}
 				</Carousel>
 			</div>
 			{typeof window !== 'undefined' &&
