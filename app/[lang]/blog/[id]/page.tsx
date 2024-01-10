@@ -58,6 +58,7 @@ const AriclePage = async ({
 		image,
 		description,
 		reviews,
+		similar
 	} = await getArticlePageData(
 		parseInt(id),
 		lang
@@ -107,7 +108,7 @@ const AriclePage = async ({
 					</div>
 				</div>
 				<div className='md:block space-y-5 hidden'>
-					<SimilarArticles />
+					<SimilarArticles similar={similar}/>
 					<ShareWithFriends />
 				</div>
 			</div>
@@ -127,7 +128,7 @@ const AriclePage = async ({
 			</div>
 			{typeof window !== 'undefined' &&
 				window.innerWidth < 768 && (
-					<SimilarArticles />
+					<SimilarArticles similar={similar}/>
 				)}
 			{typeof window !== 'undefined' &&
 				window.innerWidth < 768 && <KeepWithUs />}
