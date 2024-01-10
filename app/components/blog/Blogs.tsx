@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 
-import { washingMachinesBlogs } from '@/data';
 import Carousel from '../common/Carousel';
 import BlogCard from './BlogCard';
 import { Blog } from '@/types';
