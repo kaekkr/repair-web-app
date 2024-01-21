@@ -13,25 +13,6 @@ export type Master = {
 	tags: Tag[];
 };
 
-export type Advantage = {
-	id: number;
-	title: string;
-	body: string;
-	imgSrc: string;
-	type: number;
-};
-
-export type Brand = {
-	id: number;
-	imgSrc: string;
-};
-
-export type Work = {
-	id: number;
-	title: string;
-	body: string;
-};
-
 export type LinkT = {
 	id: number;
 	title: string;

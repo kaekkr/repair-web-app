@@ -8,8 +8,6 @@ function getLocale(request: NextRequest): string {
 	const pathnameParts = request.nextUrl.pathname.split('/').filter(Boolean);
   const pathLocale = pathnameParts[0];
 
-	console.log(pathLocale);
-
   if (pathLocale && locales.includes(pathLocale)) {
     return pathLocale;
   }
