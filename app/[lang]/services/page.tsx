@@ -12,7 +12,7 @@ async function getServicesPageData(
 	lang: string
 ): Promise<ServicesPageData> {
 	const res = await fetch(
-		`http://mepebag547.temp.swtest.ru/api/V1/page/service?lang=${lang}`
+		`http://remont.its.bz/api/V1/page/service?lang=${lang}`
 	);
 
 	if (!res.ok) {

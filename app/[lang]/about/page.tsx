@@ -14,7 +14,7 @@ async function getAboutPageData(
 	lang: string
 ): Promise<AboutPageData> {
 	const res = await fetch(
-		`http://mepebag547.temp.swtest.ru/api/V1/page/about?lang=${lang}`
+		`http://remont.its.bz/api/V1/page/about?lang=${lang}`
 	);
 
 	if (!res.ok) {

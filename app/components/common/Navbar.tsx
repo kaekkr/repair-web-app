@@ -5,7 +5,7 @@ import { getDictionary } from '@/app/[lang]/dictionaries';
 
 async function getNavbarData(lang: string) {
 	const res = await fetch(
-		`http://mepebag547.temp.swtest.ru/api/V1/menus?lang=${lang}`
+		`http://remont.its.bz/api/V1/menus?lang=${lang}`
 	);
 
 	if (!res.ok) {
@@ -19,7 +19,7 @@ async function getNavbarData(lang: string) {
 
 async function getLogo() {
 	const res = await fetch(
-		'http://mepebag547.temp.swtest.ru/api/V1/logo'
+		'http://remont.its.bz/api/V1/logo'
 	);
 
 	if (!res.ok) {

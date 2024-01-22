@@ -8,7 +8,7 @@ async function getBlogsPageData(
 	lang: string
 ): Promise<BlogsPageData> {
 	const res = await fetch(
-		`http://mepebag547.temp.swtest.ru/api/V1/page/blog?lang=${lang}&tag=1`
+		`http://remont.its.bz/api/V1/page/blog?lang=${lang}&tag=1`
 	);
 
 	if (!res.ok) {
