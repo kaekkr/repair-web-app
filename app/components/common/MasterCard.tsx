@@ -19,12 +19,12 @@ const MasterCard = ({
 	return (
 		<div className='md:flex-[0_0_20%] flex-[0_0_75%] bg-white rounded-2xl py-6 space-y-5'>
 			<div className='flex items-center space-x-7 px-3'>
-				<Image
+				{imgSrc && <Image
 					src={imgSrc}
 					alt={imgSrc}
 					width={60}
 					height={20}
-				/>
+				/>}
 				<div className='md:space-y-4 space-y-3'>
 					<h2 className='font-bold'>{name}</h2>
 					<div className='flex items-center space-x-3'>

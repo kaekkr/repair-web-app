@@ -104,12 +104,12 @@ export default async function MainPage({
 							className='md:flex-[0_0_20%] relative flex-[0_0_50%]'
 							key={mark.id}
 						>
-							<Image
+							{mark.image && <Image
 								src={mark.image}
 								alt={mark.alt}
 								width={300}
 								height={300}
-							/>
+							/>}
 						</div>
 					);
 				})}

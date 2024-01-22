@@ -42,12 +42,12 @@ const Navbar = async ({
 
 	return (
 		<nav className='md:bg-[#F3F3F3] md:p-0 bg-white rounded-2xl py-5 px-6 mb-10 space-y-5 flex justify-between items-center'>
-			<Image
+			{logo && <Image
 				src={logo}
 				alt='logo'
 				width={48}
 				height={48}
-			/>
+			/>}
 			<h2 className='md:hidden text-xl'>
 				8 702 222 41 41
 			</h2>

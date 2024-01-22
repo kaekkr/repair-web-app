@@ -22,12 +22,12 @@ const FourCard = ({
 			}`}
 		>
 			<div className='md:space-x-5 space-x-3 flex'>
-				<Image
+				{imgSrc && <Image
 					src={imgSrc}
 					alt={imgSrc}
 					width={30}
 					height={30}
-				/>
+				/>}
 				<h2 className='font-bold max-w-[5rem]'>
 					{title}
 				</h2>
