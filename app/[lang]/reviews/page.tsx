@@ -8,7 +8,7 @@ async function getReviewsPageData(
 	lang: string
 ): Promise<ReviewsPageData> {
 	const res = await fetch(
-		`${process.env.API_ROUTE}/page/review?lang=${lang}`
+		`${process.env.API_URL}/page/review?lang=${lang}`
 	);
 
 	if (!res.ok) {

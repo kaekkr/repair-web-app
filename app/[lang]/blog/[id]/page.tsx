@@ -12,7 +12,7 @@ async function getArticlePageData(
 	lang: string
 ): Promise<ArticlePageData> {
 	const res = await fetch(
-		`${process.env.API_ROUTE}/page/blog/${id}?lang=${lang}`
+		`${process.env.API_URL}/page/blog/${id}?lang=${lang}`
 	);
 
 	if (!res.ok) {
@@ -87,14 +87,14 @@ const AriclePage = async ({
 						</h2>
 					</div>
 					<Image
-						src={image}
+						src={`${process.env.API_BASE_URL}${image}`}
 						alt={image}
 						width={1200}
 						height={700}
 						className='rounded-2xl hidden md:block'
 					/>
 					<Image
-						src={image}
+						src={`${process.env.API_BASE_URL}${image}`}
 						alt={image}
 						width={400}
 						height={300}

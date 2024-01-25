@@ -20,7 +20,7 @@ const MasterCard = ({
 		<div className='md:flex-[0_0_20%] flex-[0_0_75%] bg-white rounded-2xl py-6 space-y-5'>
 			<div className='flex items-center space-x-7 px-3'>
 				{imgSrc && <Image
-					src={imgSrc}
+					src={`${process.env.API_BASE_URL}${imgSrc}`}
 					alt={imgSrc}
 					width={60}
 					height={20}

@@ -7,7 +7,7 @@ export async function handleFormSubmit(formData: FormData) {
       phone: formData.get("phone"),
     };
     const res = await fetch(
-      "${process.env.API_ROUTE}/feedback",
+      "${process.env.API_URL}/feedback",
       {
         method: "POST",
         headers: {

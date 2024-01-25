@@ -26,16 +26,16 @@ const BlogCard = ({
 			className='md:h-auto md:space-y-5 md:max-w-[18rem] px-3 py-5 bg-white rounded-2xl flex flex-col justify-between flex-[0_0_70%] h-72 cursor-pointer'
 		>
 			<div className='space-y-4'>
-				{window?.innerWidth < 768 ? (
+				{typeof window !== "undefined" && window?.innerWidth < 768 ? (
 					<Image
-						src={imgSrc}
+						src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${imgSrc}`}
 						alt={imgSrc}
 						width={100}
 						height={100}
 					/>
 				) : (
 					<Image
-						src={imgSrc}
+						src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${imgSrc}`}
 						alt={imgSrc}
 						width={1920}
 						height={1080}

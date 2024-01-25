@@ -16,8 +16,9 @@ async function getMainPageData(
 	lang: string
 ): Promise<MainPageData> {
 	const res = await fetch(
-		`${process.env.API_ROUTE}/page/main?lang=${lang}`
+		`${process.env.API_URL}/page/main?lang=${lang}`
 	);
+
 
 	if (!res.ok) {
 		throw new Error(
@@ -105,7 +106,7 @@ export default async function MainPage({
 							key={mark.id}
 						>
 							{mark.image && <Image
-								src={mark.image}
+								src={`${process.env.API_BASE_URL}${mark.image}`}
 								alt={mark.alt}
 								width={300}
 								height={300}

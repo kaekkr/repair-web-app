@@ -12,7 +12,7 @@ async function getServicesPageData(
 	lang: string
 ): Promise<ServicesPageData> {
 	const res = await fetch(
-		`${process.env.API_ROUTE}/page/service?lang=${lang}`
+		`${process.env.API_URL}/page/service?lang=${lang}`
 	);
 
 	if (!res.ok) {
@@ -94,7 +94,7 @@ const ServicesPage = async ({
 							key={mark.id}
 						>
 							<Image
-								src={mark.image}
+								src={`${process.env.API_BASE_URL}${mark.image}`}
 								alt={mark.alt}
 								width={300}
 								height={300}

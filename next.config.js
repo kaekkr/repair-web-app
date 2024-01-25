@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'remont.its.bz',
+        port: '',
+        pathname: '/storage/**',
+      }
+    ],
+  },
+};
 
 module.exports = nextConfig;

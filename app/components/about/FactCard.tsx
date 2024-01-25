@@ -16,7 +16,7 @@ const FactCard = ({
 	return (
 		<div className='p-8 bg-white rounded-xl space-y-3 flex flex-col items-center'>
 			<Image
-				src={imgSrc}
+				src={`${process.env.API_BASE_URL}${imgSrc}`}
 				alt={alt}
 				width={40}
 				height={40}

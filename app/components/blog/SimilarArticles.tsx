@@ -20,7 +20,7 @@ const SimilarArticles = ({
 							className='bg-white rounded-xl flex space-x-3 items-center p-3'
 						>
 							<Image
-								src={similar.image}
+								src={`${process.env.API_BASE_URL}${similar.image}`}
 								alt={similar.image}
 								width={1920}
 								height={1080}

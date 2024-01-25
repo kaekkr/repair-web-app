@@ -99,7 +99,7 @@ const Blogs = ({
 			<h1 className='md:block hidden font-bold text-center'>
 				{title}
 			</h1>
-			{window?.innerWidth < 768
+			{typeof window !== "undefined" && window?.innerWidth < 768
 				? renderMobileBlogView(blogView)
 				: renderBlogView(blogView)}
 		</div>

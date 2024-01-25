@@ -12,7 +12,7 @@ const Hero = ({
 	return (
 		<div className='md:h-screen mt-10 flex flex-col items-center relative'>
 		{imgSrc && <Image
-			src={imgSrc}
+			src={`${process.env.API_BASE_URL}${imgSrc}`}
 			alt={imgSrc}
 			width={1920}
 			height={1080}

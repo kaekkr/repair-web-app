@@ -14,7 +14,7 @@ async function getAboutPageData(
 	lang: string
 ): Promise<AboutPageData> {
 	const res = await fetch(
-		`${process.env.API_ROUTE}/page/about?lang=${lang}`
+		`${process.env.API_URL}/page/about?lang=${lang}`
 	);
 
 	if (!res.ok) {
@@ -95,7 +95,7 @@ const AboutPage = async ({
 						key={certificate.id}
 					>
 						<Image
-							src={certificate.image}
+							src={`${process.env.API_BASE_URL}${certificate.image}`}
 							alt={certificate.alt}
 							width={400}
 							height={400}
@@ -110,9 +110,9 @@ const AboutPage = async ({
 				{facts.map(fact => (
 					<FactCard
 						key={fact.id}
-						// title={interestingFact.title}
+						// title={facts.title}
 						title='Test'
-						// body={interestingFact.description}
+						// body={facts.description}
 						body='Test'
 						imgSrc={fact.image}
 						alt={fact.alt}

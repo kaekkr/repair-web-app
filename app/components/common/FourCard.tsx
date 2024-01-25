@@ -23,7 +23,7 @@ const FourCard = ({
 		>
 			<div className='md:space-x-5 space-x-3 flex'>
 				{imgSrc && <Image
-					src={imgSrc}
+					src={`${process.env.API_BASE_URL}${imgSrc}`}
 					alt={imgSrc}
 					width={30}
 					height={30}
