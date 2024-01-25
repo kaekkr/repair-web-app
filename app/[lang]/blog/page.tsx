@@ -8,7 +8,7 @@ async function getBlogsPageData(
 	lang: string
 ): Promise<BlogsPageData> {
 	const res = await fetch(
-		`http://remont.its.bz/api/V1/page/blog?lang=${lang}&tag=1`
+		`${process.env.API_ROUTE}/page/blog?lang=${lang}&tag=1`
 	);
 
 	if (!res.ok) {

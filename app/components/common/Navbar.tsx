@@ -5,7 +5,7 @@ import { getDictionary } from '@/app/[lang]/dictionaries';
 
 async function getNavbarData(lang: string) {
 	const res = await fetch(
-		`http://remont.its.bz/api/V1/menus?lang=${lang}`
+		`${process.env.API_ROUTE}/menus?lang=${lang}`
 	);
 
 	if (!res.ok) {
@@ -18,9 +18,11 @@ async function getNavbarData(lang: string) {
 }
 
 async function getLogo() {
+
 	const res = await fetch(
-		'http://remont.its.bz/api/V1/logo'
+		`${process.env.API_ROUTE}/logo`
 	);
+
 
 	if (!res.ok) {
 		throw new Error('Failed to fetch logo');

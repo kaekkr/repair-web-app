@@ -12,7 +12,7 @@ async function getMastersPageData(
 	lang: string
 ): Promise<MastersPageData> {
 	const res = await fetch(
-		`http://remont.its.bz/api/V1/page/master?lang=${lang}`
+		`${process.env.API_ROUTE}/page/master?lang=${lang}`
 	);
 
 	if (!res.ok) {

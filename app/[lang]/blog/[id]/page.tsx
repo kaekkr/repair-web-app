@@ -12,7 +12,7 @@ async function getArticlePageData(
 	lang: string
 ): Promise<ArticlePageData> {
 	const res = await fetch(
-		`http://remont.its.bz/api/V1/page/blog/${id}?lang=${lang}`
+		`${process.env.API_ROUTE}/page/blog/${id}?lang=${lang}`
 	);
 
 	if (!res.ok) {

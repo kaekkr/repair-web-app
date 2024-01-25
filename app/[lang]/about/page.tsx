@@ -14,7 +14,7 @@ async function getAboutPageData(
 	lang: string
 ): Promise<AboutPageData> {
 	const res = await fetch(
-		`http://remont.its.bz/api/V1/page/about?lang=${lang}`
+		`${process.env.API_ROUTE}/page/about?lang=${lang}`
 	);
 
 	if (!res.ok) {

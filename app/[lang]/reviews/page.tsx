@@ -8,7 +8,7 @@ async function getReviewsPageData(
 	lang: string
 ): Promise<ReviewsPageData> {
 	const res = await fetch(
-		`http://remont.its.bz/api/V1/page/review?lang=${lang}`
+		`${process.env.API_ROUTE}/page/review?lang=${lang}`
 	);
 
 	if (!res.ok) {
